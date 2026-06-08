@@ -6,7 +6,6 @@
       <class name="Doctor.Registration">
         <methods>
           <include name="LoginToAdminAndApproveNewlyAddedDoctor"/>
-          <include name="DoctorRegistration"/>
         </methods>
       </class> <!-- Doctor.Registration -->
     </classes>

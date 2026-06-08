@@ -272,7 +272,7 @@ public class DrIdentityProofPage {
 					ReasonForRejectionEdt.sendKeys(ReasonForRejection);
 					Thread.sleep(2000);
 					RejectKycBtn.click();
-					
+					Thread.sleep(2000);
 					Assert.assertTrue(
 						    ConformationCloseBtn.isDisplayed(),
 						    "Doctor not Rejected"

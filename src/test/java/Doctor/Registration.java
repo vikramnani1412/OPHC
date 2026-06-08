@@ -186,7 +186,7 @@ public class Registration {
         
         
         
-//        driver.quit();
+        driver.quit();
     }
     
     
