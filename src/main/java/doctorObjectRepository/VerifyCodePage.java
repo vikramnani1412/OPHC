@@ -13,9 +13,10 @@ public class VerifyCodePage {
 
 	// Finding WebElements Using @FindBy Annotations
     
-    @FindAll({@FindBy(xpath = "(//input[@inputmode='numeric'])[1]"), @FindBy(xpath = "(//input[@type='text'])[1]")}) private WebElement OtpFirstBox;
+    //@FindAll({@FindBy(xpath = "(//input[@inputmode='numeric'])[1]"), @FindBy(xpath = "(//input[@type='text'])[1]")}) private WebElement OtpFirstBox;
     
 //    @FindBys({@FindBy(tagName = "input"), @FindBy(id = "username")})
+    @FindBy(xpath="(//input[@inputmode='numeric'])[1]")private WebElement OtpFirstBox;
     
     @FindBy(xpath="//a[.=' Resend ']")private WebElement ResendLnk;
     
@@ -34,6 +35,16 @@ public class VerifyCodePage {
 	public WebElement getOtpFirstBox() {
 		return OtpFirstBox;
 	}
+
+
+	public WebElement getResendLnk() {
+		return ResendLnk;
+	}
+
+
+	public WebElement getVerifyBtn() {
+		return VerifyBtn;
+	}
 	
 	//Business Library
 	public void enteringOtpAndClickOnVerifyBtn() throws Exception
@@ -44,5 +55,8 @@ public class VerifyCodePage {
 		VerifyBtn.click();
 		
 	}
+
+
+	
 	
 }

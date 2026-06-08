@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-08T15:29:31 IST" name="Default suite" finished-at="2026-06-08T15:31:33 IST" duration-ms="122273">
+  <suite started-at="2026-06-08T17:44:58 IST" name="Default suite" finished-at="2026-06-08T17:47:30 IST" duration-ms="151212">
     <groups>
     </groups>
-    <test started-at="2026-06-08T15:29:31 IST" name="Default test" finished-at="2026-06-08T15:31:33 IST" duration-ms="122273">
+    <test started-at="2026-06-08T17:44:58 IST" name="Default test" finished-at="2026-06-08T17:47:30 IST" duration-ms="151212">
       <class name="Doctor.Registration">
-        <test-method signature="DoctorRegistration()[pri:1, instance:Doctor.Registration@6a6cb05c]" started-at="2026-06-08T15:29:31 IST" name="DoctorRegistration" finished-at="2026-06-08T15:30:55 IST" duration-ms="84399" status="PASS">
+        <test-method signature="DoctorRegistration()[pri:1, instance:Doctor.Registration@6a6cb05c]" started-at="2026-06-08T17:44:58 IST" name="DoctorRegistration" finished-at="2026-06-08T17:46:51 IST" duration-ms="112984" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DoctorRegistration -->
-        <test-method signature="LoginToAdminAndApproveNewlyAddedDoctor()[pri:2, instance:Doctor.Registration@6a6cb05c]" started-at="2026-06-08T15:30:55 IST" name="LoginToAdminAndApproveNewlyAddedDoctor" finished-at="2026-06-08T15:31:33 IST" duration-ms="37832" status="PASS">
+        <test-method signature="LoginToAdminAndApproveNewlyAddedDoctor()[pri:2, instance:Doctor.Registration@6a6cb05c]" started-at="2026-06-08T17:46:51 IST" name="LoginToAdminAndApproveNewlyAddedDoctor" finished-at="2026-06-08T17:47:30 IST" duration-ms="38187" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginToAdminAndApproveNewlyAddedDoctor -->

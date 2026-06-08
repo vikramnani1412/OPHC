@@ -105,6 +105,9 @@ public class RegisterPage {
 	{
 		WebDriverUtility wUtil = new WebDriverUtility();
 		JavaUtility jUtil = new JavaUtility();
+		String name = jUtil.getRandomName().trim();
+		String Name = name.split("\\s+")[1];
+		System.out.println(Name);
 		
 		FullNameEdt.sendKeys(FullName);
 		Thread.sleep(2000);
@@ -118,26 +121,28 @@ public class RegisterPage {
 		Thread.sleep(2000);
 		SignUpBtn.click();
 		Thread.sleep(2000);
-//		if(CloseBtn.isDisplayed())
-//		{
-//			CloseBtn.click();
-//			FullNameEdt.clear();
-//			Thread.sleep(2000);
-//			FullNameEdt.sendKeys(FullName+jUtil.getRandomNum());
-//			Thread.sleep(2000);
-//			EmailEdt.clear();
-//			Thread.sleep(2000);
-//			EmailEdt.sendKeys(Email+jUtil.getRandomNum());
-//			Thread.sleep(2000);
-//			PhoneEdt.clear();
-//			Thread.sleep(2000);
-//			PhoneEdt.sendKeys(jUtil.getRandomMobileNum());
-//			Thread.sleep(2000);
-//			SignUpBtn.click();
-//		}
-//		else
-//		{
-//			System.out.println("There is no Account found with Given Details");
-//		}
+		try {
+			if(CloseBtn.isDisplayed())
+			{
+				CloseBtn.click();
+				FullNameEdt.clear();
+				Thread.sleep(2000);
+				FullNameEdt.sendKeys(Name);
+				Thread.sleep(2000);
+				EmailEdt.clear();
+				Thread.sleep(2000);
+				EmailEdt.sendKeys(Email+jUtil.getRandomNum());
+				Thread.sleep(2000);
+				PhoneEdt.clear();
+				Thread.sleep(2000);
+				PhoneEdt.sendKeys(jUtil.getRandomMobileNum());
+				Thread.sleep(2000);
+				SignUpBtn.click();
+			}
+		} catch (Exception e) {
+				System.out.println("1000");
+		}
+		
+		
 	}
 }

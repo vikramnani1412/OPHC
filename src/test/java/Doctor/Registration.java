@@ -3,6 +3,7 @@ package Doctor;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -74,13 +75,11 @@ public class Registration {
         lPage.getRegisterLnk().click();
 
         RegisterPage rPage = new RegisterPage(driver);
+        rPage.RegisterToDoctorApplication(driver, fakeName, fakeName + "@gmail.com", mobileNumber);
 
-        rPage.RegisterToDoctorApplication(driver, fakeName, firstName + "@gmail.com", mobileNumber);
-
-        System.out.println("Doctor = " + fakeName);
-
-        VerifyCodePage vPage = new VerifyCodePage(driver);
-        vPage.enteringOtpAndClickOnVerifyBtn();
+        
+        VerifyCodePage vcPage = new VerifyCodePage(driver);
+        vcPage.enteringOtpAndClickOnVerifyBtn();
 
         ApplicationFormPage afPage = new ApplicationFormPage(driver);
         afPage.uploadDoctorDetails(driver, ImagePath);
