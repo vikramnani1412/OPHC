@@ -16,6 +16,8 @@ public class AdminDashboardPage {
     
     @FindBy(xpath="//img[@src='./../../../assets/InitialImg/dash.jpg']")private WebElement DashboardIcon;
     
+    @FindBy(xpath="//p[.=' Logout ']")private WebElement LogoutLnk;
+    
   
 	//Rule-3:Create a constructor to initilise these elements
     
@@ -41,8 +43,14 @@ public class AdminDashboardPage {
 		return DashboardIcon;
 	}
 	
-	//Business Libraries
 	
+	public WebElement getLogoutLnk() {
+		return LogoutLnk;
+	}
+	
+	
+	//Business Libraries
+
 	public void clickOnDoctorIcon(WebDriver driver) throws Exception
 	{
 		Thread.sleep(2000);
@@ -65,6 +73,12 @@ public class AdminDashboardPage {
 		driver.navigate().refresh();
 		((JavascriptExecutor)driver)
     	.executeScript("arguments[0].click();", DashboardIcon);
+	}
+	
+	public void logoutOfApplication() throws Exception
+	{
+		Thread.sleep(2000);
+		LogoutLnk.click();
 	}
 	
 }

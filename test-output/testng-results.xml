@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-08T17:44:58 IST" name="Default suite" finished-at="2026-06-08T17:47:30 IST" duration-ms="151212">
+  <suite started-at="2026-06-09T12:44:07 IST" name="Default suite" finished-at="2026-06-09T12:44:21 IST" duration-ms="14310">
     <groups>
     </groups>
-    <test started-at="2026-06-08T17:44:58 IST" name="Default test" finished-at="2026-06-08T17:47:30 IST" duration-ms="151212">
-      <class name="Doctor.Registration">
-        <test-method signature="DoctorRegistration()[pri:1, instance:Doctor.Registration@6a6cb05c]" started-at="2026-06-08T17:44:58 IST" name="DoctorRegistration" finished-at="2026-06-08T17:46:51 IST" duration-ms="112984" status="PASS">
+    <test started-at="2026-06-09T12:44:07 IST" name="Default test" finished-at="2026-06-09T12:44:21 IST" duration-ms="14310">
+      <class name="Doctor.justLogin">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:Doctor.justLogin@ba2f4ec]" started-at="2026-06-09T12:44:07 IST" name="beforeSuite" finished-at="2026-06-09T12:44:07 IST" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DoctorRegistration -->
-        <test-method signature="LoginToAdminAndApproveNewlyAddedDoctor()[pri:2, instance:Doctor.Registration@6a6cb05c]" started-at="2026-06-08T17:46:51 IST" name="LoginToAdminAndApproveNewlyAddedDoctor" finished-at="2026-06-08T17:47:30 IST" duration-ms="38187" status="PASS">
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Doctor.justLogin@ba2f4ec]" started-at="2026-06-09T12:44:07 IST" name="beforeClass" finished-at="2026-06-09T12:44:09 IST" duration-ms="2393" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginToAdminAndApproveNewlyAddedDoctor -->
-      </class> <!-- Doctor.Registration -->
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Doctor.justLogin@ba2f4ec]" started-at="2026-06-09T12:44:09 IST" name="beforeMethod" finished-at="2026-06-09T12:44:16 IST" duration-ms="6388" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="loginToDoctorApplication()[pri:0, instance:Doctor.justLogin@ba2f4ec]" started-at="2026-06-09T12:44:16 IST" name="loginToDoctorApplication" finished-at="2026-06-09T12:44:16 IST" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToDoctorApplication -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Doctor.justLogin@ba2f4ec]" started-at="2026-06-09T12:44:16 IST" name="afterMethod" finished-at="2026-06-09T12:44:21 IST" duration-ms="5308" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:Doctor.justLogin@ba2f4ec]" started-at="2026-06-09T12:44:21 IST" name="afterClass" finished-at="2026-06-09T12:44:21 IST" duration-ms="172" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:Doctor.justLogin@ba2f4ec]" started-at="2026-06-09T12:44:21 IST" name="afterSuite" finished-at="2026-06-09T12:44:21 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- Doctor.justLogin -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

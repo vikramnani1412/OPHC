@@ -1,0 +1,8 @@
+<suite name="OPHCSuite">
+    <test name="RegressionTest">
+        <classes>
+            <class name="Doctor.Registration"/>
+            <class name="Admin.LoginToAdminAndApproveNewlyAddedDoctor"/>
+        </classes>
+    </test>
+</suite>

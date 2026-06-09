@@ -40,5 +40,14 @@ public class LoginPage {
 		return RegisterLnk;
 	}
     
+	// Business Library
+	
+	public void loginToDoctor(String PhoneNum) throws Exception
+	{
+		Thread.sleep(2000);
+		EmailOrPhoneEdt.sendKeys(PhoneNum);
+		Thread.sleep(1000);
+		LoginBtn.click();
+	}
 	
 }

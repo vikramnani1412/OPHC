@@ -11,7 +11,7 @@ import adminObjectRepository.AdminLoginPage;
 import genericUtilities.PropertyFileUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Login {
+public class justLogin {
 
 	@Test
 	public void AdminLogin() throws Throwable

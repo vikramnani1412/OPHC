@@ -51,7 +51,7 @@ public class VerifyCodePage {
 	{
 		Thread.sleep(2000);
 		OtpFirstBox.sendKeys("123456");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		VerifyBtn.click();
 		
 	}
