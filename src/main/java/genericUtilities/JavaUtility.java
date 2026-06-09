@@ -2,7 +2,7 @@
 
 import java.util.Date;
 import java.util.Random;
-
+import java.time.LocalDate;
 import com.github.javafaker.Faker;
 
 /**
@@ -105,6 +105,13 @@ public class JavaUtility {
 			                        .toLowerCase();
 
 			return firstName;
+		}
+		
+		
+		public int getTodaysDate() 
+		{
+			int todayDate = LocalDate.now().getDayOfMonth();
+	        return todayDate;
 		}
 		
 		
