@@ -78,4 +78,22 @@ public class PatientRegisterPage {
 	
 	//Business Library
 	
+	public void registerAsPatient(String Fullname, String Email, String PhoneNum) throws Exception
+	{
+		Thread.sleep(1000);
+		FullNameEdt.sendKeys(Fullname);
+		Thread.sleep(1000);
+		EmailEdt.sendKeys(Email);
+		Thread.sleep(1000);
+		PhoneNumberEdt.sendKeys(PhoneNum);
+		Thread.sleep(1000);
+		SameAsMobileChckBox.click();
+		Thread.sleep(1000);
+		TermsAndConditionsChckBox.click();
+		Thread.sleep(1000);
+		SignUpBtn.click();
+		Thread.sleep(1000);
+		
+	}
+	
 }

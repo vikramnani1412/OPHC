@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HowDoYouWantToConsultPage {
 
-    // Finding WebElements Using @FindBy Annotations
+    //Rule-1 :  Finding WebElements Using @FindBy Annotations
     
     @FindBy(xpath="//div[@class='radio active']")private WebElement VideoCallRadioBtn;
     
@@ -20,7 +20,7 @@ public class HowDoYouWantToConsultPage {
     @FindBy(xpath="//button[.=' Continue ']")private WebElement ContinueBtn;
   
   
-	//Rule-3:Create a constructor to initilise these elements    
+	//Rule-2 : Create a constructor to initilise these elements    
     
 	public HowDoYouWantToConsultPage(WebDriver driver)
 	{
@@ -28,7 +28,7 @@ public class HowDoYouWantToConsultPage {
 	}
 
 	
-	//Rule-4:Provide getters to access these variables
+	//Rule-3 : Provide getters to access these variables
 	
 	public WebElement getVideoCallRadioBtn() {
 		return VideoCallRadioBtn;

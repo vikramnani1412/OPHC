@@ -38,5 +38,13 @@ public class VerifyCodePage {
 	
 	//Business Library
 	
+	public void enterOtp(String OTP) throws Exception
+	{
+		Thread.sleep(1000);
+		OtpFirstBox.sendKeys(OTP);
+		Thread.sleep(1000);
+		VerifyBtn.click();
+	}
+	
 	
 }

@@ -20,7 +20,8 @@ public class Register {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
-		driver.get("https://stg-patient.ophc.in/");
+		driver.get("https://stg-patient.ophc.in/landing/Homepage");
+		
 		
 	}
 	

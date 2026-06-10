@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class PatientLoginPage {
 
 	//Finding WebElements Using @FindBy Annotations
 
@@ -40,7 +40,7 @@ public class LoginPage {
     
 	//Rule-2:Create a constructor to initilise these elements
     
-	public LoginPage(WebDriver driver)
+	public PatientLoginPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}
@@ -119,4 +119,9 @@ public class LoginPage {
 	
 	//Business Library
 	
+	public void clickOnRegisterLnk() throws Exception
+	{
+		Thread.sleep(1000);
+		RegisterLnk.click();
+	}
 }
