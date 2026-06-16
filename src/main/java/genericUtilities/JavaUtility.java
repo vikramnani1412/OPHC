@@ -4,6 +4,9 @@ import java.util.Date;
 import java.util.Random;
 import java.time.LocalDate;
 import com.github.javafaker.Faker;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * This class contains java specific methods
@@ -99,12 +102,16 @@ public class JavaUtility {
 		public String getRandomSingleName()
 		{
 			Faker faker = new Faker();
-			String firstName = faker.name()
-			                        .firstName()
-			                        .split("\\s+")[0]
-			                        .toLowerCase();
-
-			return firstName;
+		    String firstName;
+		    
+		    do {
+		        firstName = faker.name()
+		                         .firstName()
+		                         .split("\\s+")[0]
+		                         .toLowerCase();
+		    } while (firstName.length() <= 3);
+		    
+		    return firstName;
 		}
 		
 		
@@ -115,7 +122,48 @@ public class JavaUtility {
 		}
 		
 		
+		
 
+		public String getTodayExactDate()
+		{
+			String day = String.valueOf(LocalDate.now().getDayOfMonth());
+			return day;
+		}
+		
+		public String getTodaysDateInFormat()
+		{
+			LocalTime now = LocalTime.now(); // 15:48
+
+			int minute = now.getMinute() < 30 ? 0 : 30;
+			LocalTime slotStart = now.withMinute(minute).withSecond(0).withNano(0); // 15:30
+			LocalTime nextSlotStart = slotStart.plusMinutes(30); // 16:00  ← push to next slot
+			LocalTime nextSlotEnd   = nextSlotStart.plusMinutes(30); // 16:30
+
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm a");
+			String timeSlot = nextSlotStart.format(formatter) + " - " + nextSlotEnd.format(formatter);
+
+//			System.out.println(timeSlot); // 04:00 PM - 04:30 PM
+
+			return timeSlot;
+		}
+		
+		public String increaseTimeByPlusThirtyMin()
+		{
+			LocalTime now = LocalTime.now(); // 15:48
+
+			int minute = now.getMinute() < 30 ? 0 : 30;
+			LocalTime slotStart = now.withMinute(minute).withSecond(0).withNano(0); // 15:30
+
+			LocalTime nextSlotStart = slotStart.plusMinutes(60);  // 16:30  ← skip 2 slots ahead
+			LocalTime nextSlotEnd   = nextSlotStart.plusMinutes(30); // 17:00
+
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm a");
+			String timeSlot = nextSlotStart.format(formatter) + " - " + nextSlotEnd.format(formatter);
+
+			System.out.println(timeSlot); // 04:30 PM - 05:00 PM
+
+			return timeSlot;
+		}
 	
 
 }

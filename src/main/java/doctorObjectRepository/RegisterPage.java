@@ -107,7 +107,7 @@ public class RegisterPage {
 		JavaUtility jUtil = new JavaUtility();
 		String name = jUtil.getRandomName().trim();
 		String Name = name.split("\\s+")[1];
-		System.out.println(Name);
+		System.out.println(Name+" Registering as Doctor ");
 		
 		FullNameEdt.sendKeys(FullName);
 		Thread.sleep(2000);
@@ -140,7 +140,7 @@ public class RegisterPage {
 				SignUpBtn.click();
 			}
 		} catch (Exception e) {
-				System.out.println("1000");
+				Thread.sleep(100);
 		}
 		
 		

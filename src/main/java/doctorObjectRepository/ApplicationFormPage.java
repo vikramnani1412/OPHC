@@ -1,5 +1,7 @@
 package doctorObjectRepository;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +13,8 @@ public class ApplicationFormPage {
 
 	//Finding WebElements Using @FindBy Annotations
 	
+    @FindBy(xpath="//button[.='Choose File']")private WebElement ChooseFileBtn;
+    
     @FindBy(xpath="//input[@type='file']")private WebElement InputFile;
     
     @FindBy(xpath="//button[.=' Preview AI Look ']")private WebElement PreviewAILookBtn;
@@ -23,18 +27,20 @@ public class ApplicationFormPage {
     
     @FindBy(xpath="//input[@formcontrolname='nmcNumber']")private WebElement NmcNumberEdt;
     
-    @FindBy(xpath="//select[@formcontrolname='specialization']")private WebElement SpecializationDrpdwn;
+    @FindBy(xpath="(//div/div/div[.=' Select Specialization '])[2]")private WebElement SpecializationDrpdwn;
     
-    @FindBy(xpath="//select[@formcontrolname='experience']")private WebElement ExperianceDrpDwn;
+    @FindBy(xpath="(//div[.=' Select Experience '])[2]")private WebElement ExperianceDrpDwn;
     
-    @FindBy(xpath="//select[@formcontrolname='qualification']")private WebElement QualificationDrpdwn;
+    @FindBy(xpath="(//div[.=' Select Qualification '])[2]")private WebElement QualificationDrpdwn;
     
-    @FindBy(xpath="//select[@formcontrolname='stateCouncil']")private WebElement StateCouncilDrpdwn;
+    @FindBy(xpath="(//div[.=' Select State Council '])[2]")private WebElement StateCouncilDrpdwn;
     
-    @FindBy(xpath="//select[@formcontrolname='yearOfAdmission']")private WebElement YearOfAdmissionDrpdwn;
+    @FindBy(xpath="(//div[.=' Select Year '])[2]")private WebElement YearOfAdmissionDrpdwn;
     
     @FindBy(xpath="//input[@formcontrolname='hospital']")private WebElement CurrentHospitalOrClinicEdt;
     
+    @FindBy(xpath="//h6[.='After (AI Enhanced)']/following-sibling::img")private WebElement AiImage;
+  
     @FindBy(xpath="//div[.=' Submit ']")private WebElement SubmitBtn;
     
 //    @FindBy(xpath="//a[.=' Login ']")private WebElement LoginLnk;
@@ -49,9 +55,14 @@ public class ApplicationFormPage {
 
 	//Rule-4:Provide getters to access these variables
 	
+	public WebElement getChooseFileBtn() {
+		return ChooseFileBtn;
+	}
+	
 	public WebElement getInputFile() {
 		return InputFile;
 	}
+
 
 	public WebElement getPreviewAILookBtn() {
 		return PreviewAILookBtn;
@@ -98,10 +109,14 @@ public class ApplicationFormPage {
 	}
 
 
+	public WebElement getAiImage() {
+		return AiImage;
+	}
+
+
 	public WebElement getSubmitBtn() {
 		return SubmitBtn;
 	}
-	
 	
 	
 	//Business Library
@@ -111,8 +126,13 @@ public class ApplicationFormPage {
     	WebDriverUtility wUtil = new WebDriverUtility();
     	JavaUtility jUtil = new JavaUtility();
     	
-    	InputFile.sendKeys(ImagePath);
-    	Thread.sleep(1000);
+        driver.findElement(By.xpath("//button[.='Choose File']")).click();
+        
+        Thread.sleep(2000);
+        
+        driver.findElement(By.xpath("//input[@type='file']")).sendKeys(ImagePath);
+        
+        Thread.sleep(1000);
     	
     	wUtil.clickOnEscapeButton();
 		
@@ -127,24 +147,38 @@ public class ApplicationFormPage {
     	NmcNumberEdt.sendKeys(str);
     	
     	Thread.sleep(1000);
-    	
-    	wUtil.handleDropdownByIndex(SpecializationDrpdwn, 2);
-    	
+    	    	
+    	SpecializationDrpdwn.click();
     	Thread.sleep(1000);
+    	driver.findElement(By.xpath("//li[.=' two ']")).click();
     	
-    	wUtil.handleDropdownByIndex(ExperianceDrpDwn, 3);
+    	ExperianceDrpDwn.click();
+    	Thread.sleep(1000);
+    	driver.findElement(By.xpath("//li[.=' 3 years ']")).click();
     	
+    	QualificationDrpdwn.click();
     	Thread.sleep(1000);
-    	wUtil.handleDropdownByIndex(QualificationDrpdwn, 4);
+    	driver.findElement(By.xpath("//li[.=' MS - Robotic Surgery ']")).click();
+    	
+    	StateCouncilDrpdwn.click();
     	Thread.sleep(1000);
-    	wUtil.handleDropdownByIndex(StateCouncilDrpdwn, 5);
+    	driver.findElement(By.xpath("//li[.=' Uttarakhand Medical Council (UKMC) ']")).click();
+    	
+    	YearOfAdmissionDrpdwn.click();
     	Thread.sleep(1000);
-    	wUtil.handleDropdownByIndex(YearOfAdmissionDrpdwn, 6);
+    	driver.findElement(By.xpath("//li[.=' 2020 ']")).click();
+    	
     	Thread.sleep(1000);
     	CurrentHospitalOrClinicEdt.sendKeys("abcdef");
     	Thread.sleep(1000);
-    	SubmitBtn.click();
-//    	wUtil.scrollToParticularWebElement(driver, );
-    
+    	
+    	wUtil.waitForElementToBeVisible(driver, AiImage);
+    	if(AiImage.isDisplayed())
+    	{
+    		wUtil.waitForElementToBeClickable(driver, SubmitBtn);
+    		SubmitBtn.click();
+    	}
+    	
+    	    
     }
 }

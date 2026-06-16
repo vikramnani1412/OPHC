@@ -187,14 +187,19 @@ public class DrIdentityProofPage {
 			ApproveWithRatingBtn.click();
 			
 			driver.findElement(By.xpath("(//span[.=' ★ '])["+NoOfStarsUpToFive+"]")).click();
-			
-			ConsultationFeeEdt.sendKeys(ConsultancyFee);
-			Thread.sleep(1000);
+			try {
+				ConsultationFeeEdt.sendKeys(ConsultancyFee);
+			} catch (Exception e) {
+				System.out.println("Consultation Fee is Disabled");
+			}
 			ApproveKycBtn.click();
 			Thread.sleep(2000);
 			if(ConformationCloseBtn.isDisplayed())
 			{
 				ConformationCloseBtn.click();
+			}
+			else {
+				System.out.println("Conformation Close Btn Didn't Found");
 			}
 			
 		}
@@ -227,60 +232,68 @@ public class DrIdentityProofPage {
 				
 				driver.findElement(By.xpath("(//span[.=' ★ '])["+NoOfStarsUpToFive+"]")).click();
 				Thread.sleep(1000);
-				ConsultationFeeEdt.clear();
-				Thread.sleep(1000);
-				ConsultationFeeEdt.sendKeys(ConsultancyFee);
-				Thread.sleep(1000);
+				try {
+					ConsultationFeeEdt.clear();
+					Thread.sleep(1000);
+					ConsultationFeeEdt.sendKeys(ConsultancyFee);
+				} catch (Exception e) {
+					Thread.sleep(1000);
+				}
 				ApproveKycBtn.click();
 				Thread.sleep(2000);
 				if(ConformationCloseBtn.isDisplayed())
 				{
 					ConformationCloseBtn.click();
 				}
+				else {
+					System.out.println("Conformation Close Btn Didn't Found");
+				}
+				
 				
 			}
 		}
 			
-			public void doctorRejecting(WebDriver driver, String ReasonForRejection) throws Exception
-			{	
-				//Soft Assert
-				ExcelFileUtility eUtil = new ExcelFileUtility();
-				
-				
-				
-				Thread.sleep(1000);
-				SoftAssert soft = new SoftAssert();
-			    
-				soft.assertTrue(AadhaarImg.isDisplayed(), "Aadhaar image is not displayed");
-				soft.assertTrue(PanImg.isDisplayed(), "PAN image is not displayed");
-				soft.assertTrue(ExperianceCertificateImg.isDisplayed(), "Experience Certificate image is not displayed");
-				soft.assertTrue(HospitalProofImg.isDisplayed(), "Hospital Proof image is not displayed");
-				soft.assertTrue(MedicalCertificateImg.isDisplayed(), "Medical Certificate image is not displayed");
-				soft.assertTrue(NmcCertificateImg.isDisplayed(), "NMC Certificate image is not displayed");
-				soft.assertAll();
-				
-				if(AadhaarImg.isDisplayed() &&
-					    PanImg.isDisplayed() &&
-					    ExperianceCertificateImg.isDisplayed() &&
-					    HospitalProofImg.isDisplayed() &&
-					    MedicalCertificateImg.isDisplayed() &&
-					    NmcCertificateImg.isDisplayed())
-				{
-					Thread.sleep(2000);
-					RejectWithReasonBtn.click();
-					Thread.sleep(2000);
-					ReasonForRejectionEdt.sendKeys(ReasonForRejection);
-					Thread.sleep(2000);
-					RejectKycBtn.click();
-					Thread.sleep(2000);
-					Assert.assertTrue(
-						    ConformationCloseBtn.isDisplayed(),
-						    "Doctor not Rejected"
-						);
+		public void doctorRejecting(WebDriver driver, String ReasonForRejection) throws Exception
+		{	
+			//Soft Assert
+			ExcelFileUtility eUtil = new ExcelFileUtility();
+			
+			
+			
+			Thread.sleep(1000);
+			SoftAssert soft = new SoftAssert();
+		    
+			soft.assertTrue(AadhaarImg.isDisplayed(), "Aadhaar image is not displayed");
+			soft.assertTrue(PanImg.isDisplayed(), "PAN image is not displayed");
+			soft.assertTrue(ExperianceCertificateImg.isDisplayed(), "Experience Certificate image is not displayed");
+			soft.assertTrue(HospitalProofImg.isDisplayed(), "Hospital Proof image is not displayed");
+			soft.assertTrue(MedicalCertificateImg.isDisplayed(), "Medical Certificate image is not displayed");
+			soft.assertTrue(NmcCertificateImg.isDisplayed(), "NMC Certificate image is not displayed");
+			soft.assertAll();
+			
+			if(AadhaarImg.isDisplayed() &&
+				    PanImg.isDisplayed() &&
+				    ExperianceCertificateImg.isDisplayed() &&
+				    HospitalProofImg.isDisplayed() &&
+				    MedicalCertificateImg.isDisplayed() &&
+				    NmcCertificateImg.isDisplayed())
+			{
+				Thread.sleep(2000);
+				RejectWithReasonBtn.click();
+				Thread.sleep(2000);
+				ReasonForRejectionEdt.sendKeys(ReasonForRejection);
+				Thread.sleep(2000);
+				RejectKycBtn.click();
+				Thread.sleep(2000);
+				Assert.assertTrue(
+					    ConformationCloseBtn.isDisplayed(),
+					    "Doctor not Rejected"
+					);
 
-						System.out.println("Doctor Rejected Successfully");
-					
-				}
+					System.out.println("Doctor Rejected Successfully");
+				
+			}
+			
 
 	}
 	

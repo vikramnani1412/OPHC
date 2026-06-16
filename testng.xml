@@ -1,8 +1,16 @@
-<suite name="OPHCSuite">
-    <test name="RegressionTest">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Sprint_1_Suite" parallel="tests" thread-count="1">
+
+    <listeners>
+        <listener class-name="genericUtilities.ListnersImplementationClasss"/>
+    </listeners>
+
+    <test name="Test" parallel="tests" thread-count="1">
         <classes>
             <class name="Doctor.Registration"/>
-            <class name="Admin.LoginToAdminAndApproveNewlyAddedDoctor"/>
         </classes>
     </test>
+
 </suite>

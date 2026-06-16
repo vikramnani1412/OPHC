@@ -49,11 +49,9 @@ public class VerifyCodePage {
 	//Business Library
 	public void enteringOtpAndClickOnVerifyBtn() throws Exception
 	{
-		Thread.sleep(2000);
 		OtpFirstBox.sendKeys("123456");
 		Thread.sleep(1000);
 		VerifyBtn.click();
-		
 	}
 
 

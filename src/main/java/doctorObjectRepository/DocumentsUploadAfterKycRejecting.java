@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import genericUtilities.WebDriverUtility;
 
-public class DocumentUploadPage {
+public class DocumentsUploadAfterKycRejecting {
 
 	//Finding WebElements Using @FindBy Annotations//span[.='Medical Degree Certificate']
 
@@ -41,19 +41,15 @@ public class DocumentUploadPage {
     
 	//Rule-2:Create a constructor to initilise these elements
     
-	public DocumentUploadPage(WebDriver driver)
+	public DocumentsUploadAfterKycRejecting(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}
-	
 
-	//Rule-3:Provide getters to access these variables
-	
+
 	public WebElement getUploadMedicalDegreeCertificateIcon() {
 		return UploadMedicalDegreeCertificateIcon;
 	}
-
-
 
 
 	public WebElement getUploadNMCOrStateMedicalCouncilCertificateIcon() {
@@ -61,13 +57,9 @@ public class DocumentUploadPage {
 	}
 
 
-
-
 	public WebElement getUploadAadhaarCardIcon() {
 		return UploadAadhaarCardIcon;
 	}
-
-
 
 
 	public WebElement getUploadPanCardIcon() {
@@ -75,13 +67,9 @@ public class DocumentUploadPage {
 	}
 
 
-
-
 	public WebElement getUploadExperianceCertificateIcon() {
 		return UploadExperianceCertificateIcon;
 	}
-
-
 
 
 	public WebElement getUploadClinicOrHospitalAffiliationProofIcon() {
@@ -89,12 +77,9 @@ public class DocumentUploadPage {
 	}
 
 
-
-
 	public WebElement getTermsChckBox() {
 		return TermsChckBox;
 	}
-
 
 
 	public WebElement getGuidelinesChckbox() {
@@ -102,21 +87,15 @@ public class DocumentUploadPage {
 	}
 
 
-
-
 	public WebElement getMedicalRegistrationChckbox() {
 		return MedicalRegistrationChckbox;
 	}
-
-
 
 
 	public WebElement getIconsentChckbox() {
 		return IconsentChckbox;
 	}
 
-
-    
 
 	public WebElement getUploadFailedError() {
 		return UploadFailedError;
@@ -128,17 +107,16 @@ public class DocumentUploadPage {
 	}
 
 
-
-
 	public WebElement getLogoutLnk() {
 		return LogoutLnk;
 	}
 	
-	//Business Library
 	
-	public void documentsUploading(WebDriver driver, String MedicalCertificate, String NMCcertificate, String Aadhar, String Pan, String Experiance, String AffiliationProof) throws Exception
+	//Rule-3:Provide getters to access these variables
+	
+	public void documentsUploadingAfterKycRejecting(WebDriver driver, String MedicalCertificate, String NMCcertificate, String Aadhar, String Pan, String Experiance, String AffiliationProof) throws Exception
 	{
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 	    WebDriverUtility wUtil = new WebDriverUtility();
 //	    wUtil.scrollPageUp(2);
 //	    Thread.sleep(2000);
@@ -155,15 +133,15 @@ public class DocumentUploadPage {
 //	    UploadExperianceCertificateIcon.sendKeys(Experiance);
 //	    Thread.sleep(2000);
 //	    UploadClinicOrHospitalAffiliationProofIcon.sendKeys(AffiliationProof);
-	    Thread.sleep(2000);
-	    TermsChckBox.click();
-	    Thread.sleep(2000);
-	    GuidelinesChckbox.click();
-	    Thread.sleep(2000);
-	    wUtil.scrollPageDown(1);
-	    MedicalRegistrationChckbox.click();
-	    Thread.sleep(2000);
-	    IconsentChckbox.click();
+//	    Thread.sleep(2000);
+//	    TermsChckBox.click();
+//	    Thread.sleep(2000);
+//	    GuidelinesChckbox.click();
+//	    Thread.sleep(2000);
+//	    wUtil.scrollPageDown(1);
+//	    MedicalRegistrationChckbox.click();
+//	    Thread.sleep(2000);
+//	    IconsentChckbox.click();
 	    Thread.sleep(2000);
 	    try {
 	    	if (UploadFailedError.isDisplayed()) 
@@ -174,14 +152,10 @@ public class DocumentUploadPage {
 			Thread.sleep(10);
 		}
 	    
-	    wUtil.waitForElementToBeVisible(driver, SubmitDocumentsBtn);
-	    
-	    Thread.sleep(1000);
+	    wUtil.waitForElementToBeClickable(driver, SubmitDocumentsBtn);
 	    
 	    SubmitDocumentsBtn.click();
 	    Thread.sleep(2000);
-	    
 	}
-	
 	
 }

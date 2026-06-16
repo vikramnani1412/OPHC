@@ -1,11 +1,12 @@
 package patientObjectRepository;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class VerifyCodePage {
+public class PatientVerifyCodePage {
 
     // Finding WebElements Using @FindBy Annotations
     
@@ -17,7 +18,7 @@ public class VerifyCodePage {
   
 	//Rule-3:Create a constructor to initilise these elements    
     
-	public VerifyCodePage(WebDriver driver)
+	public PatientVerifyCodePage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}
@@ -38,9 +39,9 @@ public class VerifyCodePage {
 	
 	//Business Library
 	
-	public void enterOtp(String OTP) throws Exception
+	public void enterOtpAndClickVerifyBtn(String OTP) throws Exception
 	{
-		Thread.sleep(1000);
+//		Thread.sleep(1000);
 		OtpFirstBox.sendKeys(OTP);
 		Thread.sleep(1000);
 		VerifyBtn.click();

@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Admin.justLogin">
+      <class name="Doctor.Registration">
         <methods>
-          <include name="AdminLogin"/>
+          <include name="AdminApprovingDoctorAfterReuploadingDocs"/>
         </methods>
-      </class> <!-- Admin.justLogin -->
+      </class> <!-- Doctor.Registration -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

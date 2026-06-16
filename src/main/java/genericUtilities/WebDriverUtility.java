@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -24,7 +25,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * This class contains all Generic methods related to WebDriver Actions.
- * @author vikra
+ * @author vikram
  *
  */
 public class WebDriverUtility {
@@ -54,27 +55,6 @@ public class WebDriverUtility {
 	{
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	}
-	/**
-	 * This method will wait until element is clickable
-	 * @param driver
-	 */
-	public void waitForElementToBeClickable(WebDriver driver,WebElement element)
-	{
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.elementToBeClickable(element));
-	}
-	/**
-	 * This method will wait until element is visible
-	 * @param driver
-	 */
-	public WebElement waitForElementToBeVisible(WebDriver driver, WebElement element) 
-	{
-		System.out.println("Driver = " + driver);
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    return wait.until(ExpectedConditions.visibilityOf(element));
-	}
-	
-	
 	/**
 	 * This method will wait until alert is present
 	 * @param driver
@@ -487,6 +467,92 @@ public class WebDriverUtility {
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
 	    js.executeScript("arguments[0].scrollIntoView(true);", element);
 	}
+	
+	public void waitForElementToBeClickableSeconds(WebDriver driver, WebElement element) {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+	    wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	
+	public void waitForElementToBeClickableMinutes(WebDriver driver, WebElement element) {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(2));
+	    wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	
+	  // Wait until element is visible
+    public void waitForElementToBeVisible(WebDriver driver, WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(2));
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    // Wait until element is clickable
+    public void waitForElementToBeClickable(WebDriver driver, WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(2));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    // Wait until element is selected
+    public void waitForElementToBeSelected(WebDriver driver, WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(2));
+        wait.until(ExpectedConditions.elementToBeSelected(element));
+    }
+
+    // Wait until element is invisible
+    public void waitForElementToBeInvisible(WebDriver driver, WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(2));
+        wait.until(ExpectedConditions.invisibilityOf(element));
+    }
+
+    // Wait for alert popup
+    public Alert waitForAlert(WebDriver driver) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(2));
+        return wait.until(ExpectedConditions.alertIsPresent());
+    }
+
+    // Wait until title contains text
+    public void waitForTitleContains(WebDriver driver, String partialTitle) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(2));
+        wait.until(ExpectedConditions.titleContains(partialTitle));
+    }
+
+    // Wait until title is exact
+    public void waitForTitleIs(WebDriver driver, String title) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(2));
+        wait.until(ExpectedConditions.titleIs(title));
+    }
+
+    // Wait until URL contains text
+    public void waitForUrlContains(WebDriver driver, String partialUrl) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(2));
+        wait.until(ExpectedConditions.urlContains(partialUrl));
+    }
+
+    // Wait until URL is exact
+    public void waitForUrlToBe(WebDriver driver, String url) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(2));
+        wait.until(ExpectedConditions.urlToBe(url));
+    }
+
+    // Wait for frame and switch to it
+    public void waitForFrameAndSwitch(WebDriver driver, WebElement frameElement) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(2));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameElement));
+    }
+
+    // Wait for text to be present in element
+    public void waitForTextInElement(WebDriver driver, WebElement element, String text) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(2));
+        wait.until(ExpectedConditions.textToBePresentInElement(element, text));
+    }
+
+    // Wait for page to load completely
+    public void waitForPageLoad(WebDriver driver) {
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(2));
+    }
+
+    // Implicit Wait
+    public void implicitWait(WebDriver driver) {
+        driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(2));
+    }
 	
 	
 }

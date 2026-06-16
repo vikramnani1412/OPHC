@@ -119,7 +119,7 @@ public class PatientLoginPage {
 	
 	//Business Library
 	
-	public void clickOnRegisterLnk() throws Exception
+	public void clickOnRegisterLnk(WebDriver driver) throws Exception
 	{
 		Thread.sleep(1000);
 		RegisterLnk.click();
