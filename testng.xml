@@ -4,7 +4,8 @@
 <suite name="Sprint_1_Suite" parallel="tests" thread-count="1">
 
     <listeners>
-        <listener class-name="genericUtilities.ListnersImplementationClasss"/>
+        <listener class-name="genericUtilities.AnnotationTransformer"/>
+        <listener class-name="genericUtilities.ListnersImplementationClass"/>
     </listeners>
 
     <test name="Test" parallel="tests" thread-count="1">

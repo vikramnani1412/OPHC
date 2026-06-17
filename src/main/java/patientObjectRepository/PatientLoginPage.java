@@ -124,4 +124,6 @@ public class PatientLoginPage {
 		Thread.sleep(1000);
 		RegisterLnk.click();
 	}
+	
+	
 }

@@ -353,57 +353,6 @@ public class Registration {
         
        
     }
-    
-    
-//    @Test(priority = 4)
-	public void PatientRegisteringTest() throws Exception
-	{
-		WebDriverUtility wUtil = new WebDriverUtility();
-        ExcelFileUtility eUtil = new ExcelFileUtility();
-        JavaUtility jUtil = new JavaUtility();
-
-        String FullName = jUtil.getRandomSingleName();
-        String Email = FullName + "@gmail.com";
-        String PhoneNo = jUtil.getRandomMobileNum();
-        String OTP = "123456";
-
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        driver.get("https://stg-patient.ophc.in/landing/Homepage");
-
-        PatientHomePage phPage = new PatientHomePage(driver);
-        phPage.getLoginBtn().click();
-
-        PatientLoginPage plPage = new PatientLoginPage(driver);
-        plPage.clickOnRegisterLnk(driver);
-
-        PatientRegisterPage prPage = new PatientRegisterPage(driver);
-        prPage.registerAsPatient(FullName, Email, PhoneNo);
-
-        PatientVerifyCodePage vcPage = new PatientVerifyCodePage(driver);
-        vcPage.enterOtpAndClickVerifyBtn(OTP);
-
-        driver.findElement(By.className("profile-avatar")).click();
-
-        // Using framework utility instead of explicit wait
-        WebElement nameElement = driver.findElement(By.xpath("//h4[contains(text(),'" + FullName + "')]"));
-        wUtil.waitForElementToBeVisible(driver, nameElement);
-
-        if (nameElement.isDisplayed()) {
-            String VisibleName = nameElement.getText().trim();
-
-            System.out.println("Expected Name : " + FullName);
-            System.out.println("Visible Name  : " + VisibleName);
-
-            Assert.assertEquals(VisibleName, FullName, "Name mismatch! Expected: " + FullName + " but got: " + VisibleName);
-        }
-        
-//        PatientPage pPage = new PatientPage(driver);
-//        pPage.getPageCloseBtn().click();
-    
-        
-	}
+   
     
 }

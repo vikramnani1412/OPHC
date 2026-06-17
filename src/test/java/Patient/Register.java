@@ -72,9 +72,16 @@ public class Register {
         PatientPage pPage = new PatientPage(driver);
         pPage.getPageCloseBtn().click();
         
-
-		
+        driver.quit();
+        
+	}
+	
+	@Test
+	public void loginToDoctorPannelAndSettingDoctorAvailability()
+	{
 		
 	}
+	
+	
 	
 }
