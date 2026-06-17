@@ -100,7 +100,7 @@ public class DoctorBaseClass {
     public void afterMethod() throws Exception {
 
     	WelcomePage wPage = new WelcomePage(driver);
-    	wPage.clickOnProfileIcon(); 
+    	wPage.getProfileImg().click(); 
     	Thread.sleep(1000);
     	
     	DoctorProfilePage dpPage = new DoctorProfilePage(driver);

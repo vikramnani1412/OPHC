@@ -3,7 +3,10 @@ package genericUtilities;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -174,5 +177,48 @@ public class JavaUtility {
 		String timeSlot = nextSlotStart.format(formatter) + " - " + nextSlotEnd.format(formatter);
 
 		return timeSlot;
+	}
+	
+	/**
+	 * This method will return today's day of month as an int
+	 * @return day of month
+	 */
+	public int getTodaysDayOfTheMonth() {
+	    return LocalDate.now().getDayOfMonth();
+	}
+
+	/**
+	 * This method will return today's date
+	 * @return current LocalDate
+	 */
+	public LocalDate getTodayDate() {
+	    return LocalDate.now();
+	}
+
+	/**
+	 * This method will return all remaining dates of the current month
+	 * starting from today
+	 * @return list of dates
+	 */
+	public List<LocalDate> getRemainingDatesOfMonth() {
+
+	    LocalDate today = LocalDate.now();
+	    YearMonth currentMonth = YearMonth.from(today);
+
+	    List<LocalDate> dates = new ArrayList<>();
+
+	    for (int day = today.getDayOfMonth(); day <= currentMonth.lengthOfMonth(); day++) {
+	        dates.add(currentMonth.atDay(day));
+	    }
+
+	    return dates;
+	}
+
+	/**
+	 * This method will return the current date
+	 * @return today's date
+	 */
+	public LocalDate getCurrentDate() {
+	    return LocalDate.now();
 	}
 }

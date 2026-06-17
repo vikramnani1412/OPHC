@@ -1,5 +1,6 @@
 package Patient;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -12,9 +13,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import adminObjectRepository.PatientHomePage;
+import doctorObjectRepository.LoginPage;
 import doctorObjectRepository.VerifyCodePage;
 import genericUtilities.ExcelFileUtility;
 import genericUtilities.JavaUtility;
+import genericUtilities.PropertyFileUtility;
 import genericUtilities.WebDriverUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import patientObjectRepository.PatientLoginPage;
@@ -24,6 +27,34 @@ import patientObjectRepository.PatientVerifyCodePage;
 
 public class Register {
 
+	WebDriverUtility wUtil = new WebDriverUtility();
+    ExcelFileUtility eUtil = new ExcelFileUtility();
+    JavaUtility jUtil = new JavaUtility();
+    PropertyFileUtility pUtil = new PropertyFileUtility();
+	
+    @Test
+	public void loginToDoctorPannelAndSettingDoctorAvailabilityTest() throws Throwable
+	{				
+		String URL = pUtil.readDataFromPropertyFile("doctorurl");
+        String PHONENUMBER = pUtil.readDataFromPropertyFile("dmobilenumber");
+		
+		WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.get(URL);
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        
+        LoginPage lPage = new LoginPage(driver);
+        lPage.loginToDoctor(PHONENUMBER);
+        
+        VerifyCodePage vcPage = new VerifyCodePage(driver);
+        vcPage.enteringOtpAndClickOnVerifyBtn();
+        
+        
+        
+	}
+    
+    
 	@Test
 	public void PatientRegisteringTest() throws Exception
 	{
@@ -34,7 +65,7 @@ public class Register {
         String FullName = jUtil.getRandomSingleName();
         String Email = FullName + "@gmail.com";
         String PhoneNo = jUtil.getRandomMobileNum();
-        String OTP = "123456";
+        String OTP = pUtil.readDataFromPropertyFile("potp");
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -73,15 +104,8 @@ public class Register {
         pPage.getPageCloseBtn().click();
         
         driver.quit();
-        
+      
+	
 	}
-	
-	@Test
-	public void loginToDoctorPannelAndSettingDoctorAvailability()
-	{
-		
-	}
-	
-	
 	
 }
