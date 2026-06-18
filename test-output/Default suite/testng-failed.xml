@@ -5,7 +5,7 @@
     <classes>
       <class name="Doctor.Registration">
         <methods>
-          <include name="AdminApprovingDoctorAfterReuploadingDocs"/>
+          <include name="DoctorRegistrationTest"/>
         </methods>
       </class> <!-- Doctor.Registration -->
     </classes>

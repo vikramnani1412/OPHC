@@ -27,15 +27,15 @@ public class ApplicationFormPage {
     
     @FindBy(xpath="//input[@formcontrolname='nmcNumber']")private WebElement NmcNumberEdt;
     
-    @FindBy(xpath="(//div/div/div[.=' Select Specialization '])[2]")private WebElement SpecializationDrpdwn;
+    @FindBy(xpath="//div[@class='custom-dropdown']/div[.=' Select Specialization ']")private WebElement SpecializationDrpdwn;
     
-    @FindBy(xpath="(//div[.=' Select Experience '])[2]")private WebElement ExperianceDrpDwn;
+    @FindBy(xpath="//div[@class='custom-dropdown']/div[.=' Select Experience ']")private WebElement ExperianceDrpDwn;
     
-    @FindBy(xpath="(//div[.=' Select Qualification '])[2]")private WebElement QualificationDrpdwn;
+    @FindBy(xpath="//div[@class='custom-dropdown']/div[.=' Select Qualification ']")private WebElement QualificationDrpdwn;
     
-    @FindBy(xpath="(//div[.=' Select State Council '])[2]")private WebElement StateCouncilDrpdwn;
+    @FindBy(xpath="//div[@class='custom-dropdown']/div[.=' Select State Council ']")private WebElement StateCouncilDrpdwn;
     
-    @FindBy(xpath="(//div[.=' Select Year '])[2]")private WebElement YearOfAdmissionDrpdwn;
+    @FindBy(xpath="//div[@class='custom-dropdown']/div[.=' Select Year ']")private WebElement YearOfAdmissionDrpdwn;
     
     @FindBy(xpath="//input[@formcontrolname='hospital']")private WebElement CurrentHospitalOrClinicEdt;
     
@@ -150,7 +150,7 @@ public class ApplicationFormPage {
     	    	
     	SpecializationDrpdwn.click();
     	Thread.sleep(1000);
-    	driver.findElement(By.xpath("//li[.=' two ']")).click();
+    	driver.findElement(By.xpath("//li[.=' Emergency Medicine ']")).click();
     	
     	ExperianceDrpDwn.click();
     	Thread.sleep(1000);

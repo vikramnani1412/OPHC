@@ -76,6 +76,8 @@ public class Registration {
 
         driver.get(URL);
 
+        wUtil.takeScreenShot(driver, "Login Page");
+        
         System.out.println("Registration Started");
         
         LoginPage lPage = new LoginPage(driver);

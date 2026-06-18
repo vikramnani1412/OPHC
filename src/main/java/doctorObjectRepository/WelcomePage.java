@@ -1,12 +1,23 @@
 package doctorObjectRepository;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import genericUtilities.JavaUtility;
+import genericUtilities.WebDriverUtility;
+
 public class WelcomePage {
 
+	WebDriverUtility wUtil = new WebDriverUtility();
+	JavaUtility jUtil = new JavaUtility();
+	String Time = jUtil.getCurrentTimeInOPHCformat();
+	
+	
+	String NextSlot = jUtil.getNextHalfHourSlotForOPHC();
+	
 	//Finding WebElements Using @FindBy Annotations
 
     @FindBy(xpath="//img[@class='profile-img']")private WebElement ProfileImg;
@@ -126,5 +137,9 @@ public class WelcomePage {
 	
 	// Business Library
 	
-	
+	public void bookingSlot(WebDriver driver)
+	{
+		
+		driver.findElement(By.xpath("//small[.='Today ']/following-sibling::small[.='"+Time+"']/../following-sibling::div//button[.=' Join Call ']"));
+	}
 }

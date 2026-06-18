@@ -108,4 +108,16 @@ public class Register {
 	
 	}
 	
+	@Test
+	public void Test()
+	{
+		WebDriverUtility wUtil = new WebDriverUtility();
+		JavaUtility jUtil = new JavaUtility();
+		String Time = jUtil.getCurrentTimeInOPHCformat();
+		System.out.println(Time);
+		
+		System.out.println(jUtil.getNextHalfHourSlotForOPHC());
+		
+	}
+	
 }

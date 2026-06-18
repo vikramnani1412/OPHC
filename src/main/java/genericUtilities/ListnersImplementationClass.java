@@ -38,15 +38,15 @@ package genericUtilities;
 	                            + new JavaUtility().getSystemDateInFormat() + ".html";
 
 	                    ExtentSparkReporter htmlReport = new ExtentSparkReporter(reportPath);
-	                    htmlReport.config().setDocumentTitle("Goldsikka Execution Report");
-	                    htmlReport.config().setReportName("Goldsikka-Automation Report");
+	                    htmlReport.config().setDocumentTitle("OPHC Execution Report");
+	                    htmlReport.config().setReportName("OPHC-Automation Report");
 	                    htmlReport.config().setTheme(Theme.STANDARD);
 	                    htmlReport.config().setEncoding("utf-8");
 
 	                    report = new ExtentReports();
 	                    report.attachReporter(htmlReport);
 	                    report.setSystemInfo("Base Browser", System.getProperty("browser", "Chrome"));
-	                    report.setSystemInfo("Base URL", "http://stg-fms.goldbox.gold/signin");
+	                    report.setSystemInfo("Base URL's", "https://stg-admin-ui.ophc.in/, https://stg-doctor.ophc.in/auth/login, https://stg-patient.ophc.in/landing/Homepage");
 	                    report.setSystemInfo("Base Platform", System.getProperty("os.name"));
 	                    report.setSystemInfo("Reporter Name", "Vikram Gangavarapu");
 	                    report.setSystemInfo("Environment", System.getProperty("env", "STAGING"));

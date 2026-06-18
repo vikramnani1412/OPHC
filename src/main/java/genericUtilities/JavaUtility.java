@@ -221,4 +221,24 @@ public class JavaUtility {
 	public LocalDate getCurrentDate() {
 	    return LocalDate.now();
 	}
+	
+	
+	public static String getCurrentTimeInOPHCformat() {
+	    return LocalTime.now()
+	            .format(DateTimeFormatter.ofPattern("HH:mm"));
+	}
+	
+	public static String getNextHalfHourSlotForOPHC() {
+	    LocalTime now = LocalTime.now();
+
+	    LocalTime startTime = (now.getMinute() < 30)
+	            ? now.withMinute(30).withSecond(0).withNano(0)
+	            : now.plusHours(1).withMinute(0).withSecond(0).withNano(0);
+
+	    LocalTime endTime = startTime.plusMinutes(30);
+
+	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+
+	    return startTime.format(formatter) + " to " + endTime.format(formatter);
+	}
 }
