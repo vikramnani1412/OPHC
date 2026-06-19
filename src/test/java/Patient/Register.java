@@ -2,6 +2,7 @@ package Patient;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,7 @@ import org.testng.annotations.Test;
 import adminObjectRepository.PatientHomePage;
 import doctorObjectRepository.LoginPage;
 import doctorObjectRepository.VerifyCodePage;
+import doctorObjectRepository.WelcomePage;
 import genericUtilities.ExcelFileUtility;
 import genericUtilities.JavaUtility;
 import genericUtilities.PropertyFileUtility;
@@ -32,8 +34,8 @@ public class Register {
     JavaUtility jUtil = new JavaUtility();
     PropertyFileUtility pUtil = new PropertyFileUtility();
 	
-    @Test
-	public void loginToDoctorPannelAndSettingDoctorAvailabilityTest() throws Throwable
+    @Test(priority = 1)
+	public void loginToDoctorPannelSettingDoctorAvailabilityTest() throws Throwable
 	{				
 		String URL = pUtil.readDataFromPropertyFile("doctorurl");
         String PHONENUMBER = pUtil.readDataFromPropertyFile("dmobilenumber");
@@ -50,12 +52,17 @@ public class Register {
         VerifyCodePage vcPage = new VerifyCodePage(driver);
         vcPage.enteringOtpAndClickOnVerifyBtn();
         
+        WelcomePage wPage = new WelcomePage(driver);
+        wPage.DoctorAddingSlot(driver);
         
         
-	}
+        
+        
+ }
     
+   
     
-	@Test
+	@Test(priority = 2)
 	public void PatientRegisteringTest() throws Exception
 	{
 		WebDriverUtility wUtil = new WebDriverUtility();
@@ -103,7 +110,7 @@ public class Register {
         PatientPage pPage = new PatientPage(driver);
         pPage.getPageCloseBtn().click();
         
-        driver.quit();
+//        driver.quit();
       
 	
 	}

@@ -1,5 +1,6 @@
 package patientObjectRepository;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -90,6 +91,15 @@ public class PatientPage {
 		return LogoutLnk;
 	}
 
+	
+	// Business Library
+	
+	public void patientBookingDoctor(WebDriver driver, String DoctorName) throws Exception
+	{
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//h6[contains(.,'"+DoctorName+"')]/../../following-sibling::div//button[.='Book Now']")).click();
+		System.out.println("Patient Booked Doctor");
+	}
     
 	
 	

@@ -131,7 +131,7 @@ public class RegisterPage {
 				Thread.sleep(2000);
 				EmailEdt.clear();
 				Thread.sleep(2000);
-				EmailEdt.sendKeys(Email+jUtil.getRandomNum());
+				EmailEdt.sendKeys(Name+jUtil.getRandomNum());
 				Thread.sleep(2000);
 				PhoneEdt.clear();
 				Thread.sleep(2000);

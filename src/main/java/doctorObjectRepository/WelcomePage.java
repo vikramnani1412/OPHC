@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import genericUtilities.JavaUtility;
 import genericUtilities.WebDriverUtility;
 
@@ -30,6 +29,8 @@ public class WelcomePage {
     
     @FindBy(xpath="//span[.=' + Add Slot ']")private WebElement AddSlotBtn;
     
+    @FindBy(xpath="//button[.='Add Slot']")private WebElement AddSlotBtn2;
+    
     @FindBy(xpath="(//div[@class='day disabled ng-star-inserted'])[last()]")private WebElement LastDisabledDayInTheMonthEle;
     
     @FindBy(xpath="//div[@class='day today ng-star-inserted active']")private WebElement TodaysDateInTheMonthEle;
@@ -53,6 +54,13 @@ public class WelcomePage {
     @FindBy(xpath="//small[.='Today ']/following-sibling::small[.='18:00']/../following-sibling::div//button[.=' Join Call ']")private WebElement AccToTodayTimeJoinCallBtn;
     
     
+    // FreshlyAdded
+    
+    @FindBy(xpath="(//div[@class='slot-item ng-star-inserted'])[1]")private WebElement FirstAvailableSlotInSelectTimeSlotPage;
+    
+    
+    
+    
 	//Rule-2:Create a constructor to initilise these elements
     
 	public WelcomePage(WebDriver driver)
@@ -73,6 +81,12 @@ public class WelcomePage {
 
 	public WebElement getAddSlotBtn() {
 		return AddSlotBtn;
+	}
+
+	
+	
+	public WebElement getAddSlotBtn2() {
+		return AddSlotBtn2;
 	}
 
 	public WebElement getNextMonthBtn() {
@@ -134,12 +148,27 @@ public class WelcomePage {
 		return AccodingCrntTimeJoinCallBtn;
 	}
 	
+	public WebElement getFirstAvailableSlotInSelectTimeSlotPage() {
+		return FirstAvailableSlotInSelectTimeSlotPage;
+	}
 	
 	// Business Library
-	
-	public void bookingSlot(WebDriver driver)
+
+	public void DoctorAddingSlot(WebDriver driver) throws Exception
 	{
+//		String Time = jUtil.getCurrentTimeInOPHCformat();
+//		String NextSlot = jUtil.getNextHalfHourSlotForOPHC();
 		
-		driver.findElement(By.xpath("//small[.='Today ']/following-sibling::small[.='"+Time+"']/../following-sibling::div//button[.=' Join Call ']"));
+		int Today = jUtil.getTodaysDayOfTheMonth();
+		driver.findElement(By.xpath("//div[.=' "+Today+" ']")).click();
+		Thread.sleep(3000);
+		AddSlotBtn.click();
+		Thread.sleep(3000);
+		FirstAvailableSlotInSelectTimeSlotPage.click();
+		Thread.sleep(3000);
+		AddSlotBtn2.click();
+		
+		
 	}
+	
 }
