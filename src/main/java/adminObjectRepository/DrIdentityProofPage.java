@@ -166,7 +166,7 @@ public class DrIdentityProofPage {
 	{	
 		//Soft Assert
 		
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		SoftAssert soft = new SoftAssert();
 	    
 		soft.assertTrue(AadhaarImg.isDisplayed(), "Aadhaar image is not displayed");
@@ -185,7 +185,7 @@ public class DrIdentityProofPage {
 			    NmcCertificateImg.isDisplayed())
 		{
 			ApproveWithRatingBtn.click();
-			
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("(//span[.=' ★ '])["+NoOfStarsUpToFive+"]")).click();
 			try {
 				ConsultationFeeEdt.sendKeys(ConsultancyFee);
@@ -231,7 +231,7 @@ public class DrIdentityProofPage {
 //				ApproveWithRatingBtn.click();
 				
 				driver.findElement(By.xpath("(//span[.=' ★ '])["+NoOfStarsUpToFive+"]")).click();
-				Thread.sleep(1000);
+				Thread.sleep(2000);
 				try {
 					ConsultationFeeEdt.clear();
 					Thread.sleep(1000);

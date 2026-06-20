@@ -32,10 +32,48 @@ public class UploadMedicalReportsPage {
 	{
 		PageFactory.initElements(driver, this);
 	}
-    
+	
     
 	//Rule-3:Provide getters to access these variables
 	
-	
+	public WebElement getMedicalReportsPageHeader() {
+		return MedicalReportsPageHeader;
+	}
+
+
+	public WebElement getBackBtn() {
+		return BackBtn;
+	}
+
+
+	public WebElement getUploadBtn() {
+		return UploadBtn;
+	}
+
+
+	public WebElement getSubmitBtn() {
+		return SubmitBtn;
+	}
+
+
+	public WebElement getWhatsappEdt() {
+		return WhatsappEdt;
+	}
+
+
+	public WebElement getTermsAndConditionsChckBox() {
+		return TermsAndConditionsChckBox;
+	}
+
+
+	public WebElement getSignUpBtn() {
+		return SignUpBtn;
+	}
+
+
+	public WebElement getLoginLnk() {
+		return LoginLnk;
+	}
+    
 	
 }

@@ -132,45 +132,45 @@ public class ApplicationFormPage {
         
         driver.findElement(By.xpath("//input[@type='file']")).sendKeys(ImagePath);
         
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     	
     	wUtil.clickOnEscapeButton();
 		
-    	Thread.sleep(1000);
+    	Thread.sleep(2000);
     	
     	wUtil.scrollToParticularWebElement(driver, DrProfileNameScrolling);
     	
-    	Thread.sleep(1000);
+    	Thread.sleep(2000);
     	
     	String str = String.valueOf(jUtil.getRandomNum());
     	
     	NmcNumberEdt.sendKeys(str);
     	
-    	Thread.sleep(1000);
+    	Thread.sleep(2000);
     	    	
     	SpecializationDrpdwn.click();
-    	Thread.sleep(1000);
+    	Thread.sleep(2000);
     	driver.findElement(By.xpath("//li[.=' Emergency Medicine ']")).click();
     	
     	ExperianceDrpDwn.click();
-    	Thread.sleep(1000);
+    	Thread.sleep(2000);
     	driver.findElement(By.xpath("//li[.=' 3 years ']")).click();
     	
     	QualificationDrpdwn.click();
-    	Thread.sleep(1000);
+    	Thread.sleep(2000);
     	driver.findElement(By.xpath("//li[.=' MS - Robotic Surgery ']")).click();
     	
     	StateCouncilDrpdwn.click();
-    	Thread.sleep(1000);
+    	Thread.sleep(2000);
     	driver.findElement(By.xpath("//li[.=' Uttarakhand Medical Council (UKMC) ']")).click();
     	
     	YearOfAdmissionDrpdwn.click();
-    	Thread.sleep(1000);
+    	Thread.sleep(2000);
     	driver.findElement(By.xpath("//li[.=' 2020 ']")).click();
     	
-    	Thread.sleep(1000);
+    	Thread.sleep(2000);
     	CurrentHospitalOrClinicEdt.sendKeys("abcdef");
-    	Thread.sleep(1000);
+    	Thread.sleep(2000);
     	
     	wUtil.waitForElementToBeVisible(driver, AiImage);
     	if(AiImage.isDisplayed())

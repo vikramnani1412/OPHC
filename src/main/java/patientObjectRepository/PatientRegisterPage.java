@@ -80,19 +80,19 @@ public class PatientRegisterPage {
 	
 	public void registerAsPatient(String Fullname, String Email, String PhoneNum) throws Exception
 	{
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		FullNameEdt.sendKeys(Fullname);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		EmailEdt.sendKeys(Email);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		PhoneNumberEdt.sendKeys(PhoneNum);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		SameAsMobileChckBox.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		TermsAndConditionsChckBox.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		SignUpBtn.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		
 	}
 	

@@ -107,8 +107,8 @@ public class RegisterPage {
 		JavaUtility jUtil = new JavaUtility();
 		String name = jUtil.getRandomName().trim();
 		String Name = name.split("\\s+")[1];
-		System.out.println(Name+" Registering as Doctor ");
-		
+		System.out.println(Name+" Doctor Registering to the App");
+		Thread.sleep(2000);
 		FullNameEdt.sendKeys(FullName);
 		Thread.sleep(2000);
 		EmailEdt.sendKeys(Email);

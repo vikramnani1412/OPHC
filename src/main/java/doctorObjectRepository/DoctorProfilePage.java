@@ -86,7 +86,7 @@ public class DoctorProfilePage {
 	
 	public void clickOnLogoutLnk() throws Exception
 	{
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		LogoutLnk.click();
 	}
 }

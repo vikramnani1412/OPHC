@@ -50,7 +50,7 @@ public class VerifyCodePage {
 	public void enteringOtpAndClickOnVerifyBtn() throws Exception
 	{
 		OtpFirstBox.sendKeys("123456");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		VerifyBtn.click();
 	}
 

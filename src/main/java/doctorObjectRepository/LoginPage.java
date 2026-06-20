@@ -46,7 +46,7 @@ public class LoginPage {
 	{
 		Thread.sleep(2000);
 		EmailOrPhoneEdt.sendKeys(PhoneNum);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		LoginBtn.click();
 	}
 	

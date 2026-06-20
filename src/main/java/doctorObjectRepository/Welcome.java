@@ -143,9 +143,9 @@ public class Welcome {
 		
 		int Today = jUtil.getTodaysDayOfTheMonth();
 		driver.findElement(By.xpath("//div[.=' "+Today+" ']")).click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		AddSlotBtn.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		
 		

@@ -176,7 +176,7 @@ public class DocumentUploadPage {
 	    
 	    wUtil.waitForElementToBeVisible(driver, SubmitDocumentsBtn);
 	    
-	    Thread.sleep(1000);
+	    Thread.sleep(2000);
 	    
 	    SubmitDocumentsBtn.click();
 	    Thread.sleep(2000);

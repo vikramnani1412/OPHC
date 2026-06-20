@@ -96,7 +96,7 @@ public class PatientPage {
 	
 	public void patientBookingDoctor(WebDriver driver, String DoctorName) throws Exception
 	{
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//h6[contains(.,'"+DoctorName+"')]/../../following-sibling::div//button[.='Book Now']")).click();
 		System.out.println("Patient Booked Doctor");
 	}

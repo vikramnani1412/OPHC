@@ -86,7 +86,7 @@ public class PatientHomePage {
 	
 	public void clickOnLoginButtom() throws Exception
 	{
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		LoginBtn.click();
 	}
 	

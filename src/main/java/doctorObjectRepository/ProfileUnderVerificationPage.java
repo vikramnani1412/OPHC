@@ -47,6 +47,7 @@ public class ProfileUnderVerificationPage {
 	public void clickOnLogoutBtn(WebDriver driver) throws Exception
 	{
 		WebDriverUtility wUtil = new WebDriverUtility();
+		Thread.sleep(2000);
 		wUtil.waitForElementToBeVisible(driver, ConformationMsg);
 		if (ConformationMsg.isDisplayed())
 		{

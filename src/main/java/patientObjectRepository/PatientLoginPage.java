@@ -121,7 +121,7 @@ public class PatientLoginPage {
 	
 	public void clickOnRegisterLnk(WebDriver driver) throws Exception
 	{
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		RegisterLnk.click();
 	}
 	

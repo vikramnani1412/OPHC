@@ -1,4 +1,4 @@
-package Doctor;
+package ophc;
 
 import java.io.IOException;
 import java.time.Duration;

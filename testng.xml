@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="tests" name="Sprint_1">
 
-<suite name="Sprint_1_Suite" parallel="tests" thread-count="1">
+  <listeners>
+    <listener class-name="genericUtilities.ListnersImplementationClass"/>
+  </listeners>
 
-    <listeners>
-        <listener class-name="genericUtilities.AnnotationTransformer"/>
-        <listener class-name="genericUtilities.ListnersImplementationClass"/>
-    </listeners>
-
-    <test name="Test" parallel="tests" thread-count="1">
-        <classes>
-            <class name="Doctor.Registration"/>
-        </classes>
-    </test>
+  <test thread-count="1" parallel="tests" name="Test">
+    <classes>
+      <class name="ophc.Sprint_1"/>
+    </classes>
+  </test>
 
 </suite>

@@ -43,7 +43,7 @@ public class PatientVerifyCodePage {
 	{
 //		Thread.sleep(1000);
 		OtpFirstBox.sendKeys(OTP);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		VerifyBtn.click();
 	}
 	
