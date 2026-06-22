@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import adminObjectRepository.AdminDashboardPage;
@@ -104,7 +105,7 @@ public class Sprint_1 {
 
         wUtil.scrollPageUp(2);
 
-        driver.findElement(By.xpath("//span[.='Medical Degree  Certificate']/../preceding-sibling::input")).sendKeys(medicalCertificate);
+        driver.findElement(By.xpath("//span[text()='Medical Degree ']/../preceding-sibling::input[@type='file']")).sendKeys(medicalCertificate);
         driver.findElement(By.xpath("//span[.='NMC / State Medical Council Certificate']/../preceding-sibling::input")).sendKeys(nmcCertificate);
         driver.findElement(By.xpath("//span[.='Aadhaar Card']/../preceding-sibling::input")).sendKeys(aadhar);
         driver.findElement(By.xpath("//span[.='PAN Card']/../preceding-sibling::input")).sendKeys(pan);
@@ -205,7 +206,7 @@ public class Sprint_1 {
 
         ProfileUnderVerificationPage puvPage = new ProfileUnderVerificationPage(driver);
         puvPage.clickOnLogoutBtn(driver);
-
+        
         System.out.println("Re Submission Completed");
         driver.quit();
     }

@@ -107,7 +107,7 @@ public class RegisterPage {
 		JavaUtility jUtil = new JavaUtility();
 		String name = jUtil.getRandomName().trim();
 		String Name = name.split("\\s+")[1];
-		System.out.println(Name+" Doctor Registering to the App");
+		//System.out.println(Name+" Doctor Registering to the App");
 		Thread.sleep(2000);
 		FullNameEdt.sendKeys(FullName);
 		Thread.sleep(2000);
@@ -131,7 +131,7 @@ public class RegisterPage {
 				Thread.sleep(2000);
 				EmailEdt.clear();
 				Thread.sleep(2000);
-				EmailEdt.sendKeys(Name+jUtil.getRandomNum());
+				EmailEdt.sendKeys(Email);
 				Thread.sleep(2000);
 				PhoneEdt.clear();
 				Thread.sleep(2000);

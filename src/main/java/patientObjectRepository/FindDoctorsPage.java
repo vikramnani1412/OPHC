@@ -1,5 +1,6 @@
 package patientObjectRepository;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,12 +19,16 @@ public class FindDoctorsPage {
     @FindBy(xpath="//button[.='New']")private WebElement NewBtn;
     
     @FindBy(xpath="//button[.='Follow up']")private WebElement FollowUpBtn;
-        
-    @FindBy(xpath="//button[.='Follow up']")private WebElement BookNowBtnBasedOnIndex;
     
-    @FindBy(xpath="//h6[.='Dr. jayant']/../../following-sibling::div/div/div/following-sibling::button[.='Book Now']")private WebElement BookNowBtnBasedOnDoctorName;
+    @FindBy(xpath="(//h6[contains(.,'Dr')])[1]")private WebElement FirstDoctor;
+    
+    @FindBy(xpath="(//h6[contains(.,'Dr')])[1]/../../following-sibling::div//button[.='Book Now']")private WebElement FirstDoctorBookNowBtn;
+    
+    @FindBy(xpath="//h6[.='Dr. ophc tester']/../../following-sibling::div//button[.='Book Now']")private WebElement BookNowBtnBasedOnDoctorName;
   
-  
+    @FindBy(xpath="(//button[.='Book Now'])[1]")private WebElement BookNowBtnBasedOnIndex;
+    
+        
 	//Rule-3:Create a constructor to initilise these elements    
     
 	public FindDoctorsPage(WebDriver driver)
@@ -58,14 +63,28 @@ public class FindDoctorsPage {
 		return BookNowBtnBasedOnIndex;
 	}
 
+	public WebElement getFirstDoctor() {
+		return FirstDoctor;
+	}
+
+	public WebElement getFirstDoctorBookNowBtn() {
+		return FirstDoctorBookNowBtn;
+	}
+
 	public WebElement getBookNowBtnBasedOnDoctorName() {
 		return BookNowBtnBasedOnDoctorName;
 	}
 
 	
-
-	
-	
 	//Business Library
+	
+	public void BookingFrstDoctor() throws Exception
+	{
+		Thread.sleep(2000);
+		String DoctorName = FirstDoctor.getText();
+		System.out.println("Patient searching for Doctor : "+DoctorName);
+		Thread.sleep(2000);
+		FirstDoctorBookNowBtn.click();
+	}
 	
 }

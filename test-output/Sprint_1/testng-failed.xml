@@ -8,8 +8,8 @@
     <classes>
       <class name="ophc.Sprint_1">
         <methods>
-          <include name="AdminApprovingDoctorAfterReuploadingDocs"/>
-          <include name="loginToDoctorPannelSettingDoctorAvailabilityTest"/>
+          <include name="DoctorRegistrationTest"/>
+          <include name="rejectedDoctorReSubmitingDocumentsTest"/>
         </methods>
       </class> <!-- ophc.Sprint_1 -->
     </classes>

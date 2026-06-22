@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">OPHC-Automation Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jun 20, 2026 12:28:29 pm</span></a>
+<a href="#"><span class="badge badge-primary">Jun 20, 2026 03:32:01 pm</span></a>
 </li>
 </ul>
 </div>
@@ -91,25 +91,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author="ophc.Sprint_1"
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">DoctorRegistrationTest</p>
             <p class="text-sm">
-              <span>12:28:29 pm</span> / <span>00:02:45:330</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>3:32:01 pm</span> / <span>00:01:46:293</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">DoctorRegistrationTest</h5>
-<span class='badge badge-success'>06.20.2026 12:28:29 pm</span>
-<span class='badge badge-danger'>06.20.2026 12:31:14 pm</span>
-<span class='badge badge-default'>00:02:45:330</span>
+<h5 class="test-status text-fail">DoctorRegistrationTest</h5>
+<span class='badge badge-success'>06.20.2026 3:32:01 pm</span>
+<span class='badge badge-danger'>06.20.2026 3:33:47 pm</span>
+<span class='badge badge-default'>00:01:46:293</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -123,16 +123,75 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>12:28:29 pm</td>
+        <td>3:32:01 pm</td>
         <td>
           DoctorRegistrationTest -> Test Execution Started
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>12:31:14 pm</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:33:47 pm</td>
         <td>
-          DoctorRegistrationTest -> Test Passed (165337 ms)
+          DoctorRegistrationTest -> Test Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:33:47 pm</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='Medical Degree  Certificate']/../preceding-sibling::inpu"}
+  (Session info: chrome=148.0.7778.217)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [441d2d8280ba992ef2b338ac06bf7709, findElement {value=//span[.='Medical Degree  Certificate']/../preceding-sibling::inpu, using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\INNOVA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57048}, goog:processID: 19108, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57048/devtoo..., se:cdpVersion: 148.0.7778.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 441d2d8280ba992ef2b338ac06bf7709
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at ophc.Sprint_1.DoctorRegistrationTest(Sprint_1.java:108)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>3:33:47 pm</td>
+        <td>
+          Unable to attach screenshot: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "ts" is null
         </td>
       </tr>
   </tbody>
@@ -140,25 +199,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="2"
+        <li class="test-item"  status="fail" test-id="2"
           author="ophc.Sprint_1"
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">LoginToAdminAndApproveNewlyAddedDoctorTest</p>
             <p class="text-sm">
-              <span>12:31:14 pm</span> / <span>00:01:03:538</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>3:33:47 pm</span> / <span>00:00:13:124</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">LoginToAdminAndApproveNewlyAddedDoctorTest</h5>
-<span class='badge badge-success'>06.20.2026 12:31:14 pm</span>
-<span class='badge badge-danger'>06.20.2026 12:32:18 pm</span>
-<span class='badge badge-default'>00:01:03:538</span>
+<h5 class="test-status text-fail">LoginToAdminAndApproveNewlyAddedDoctorTest</h5>
+<span class='badge badge-success'>06.20.2026 3:33:47 pm</span>
+<span class='badge badge-danger'>06.20.2026 3:34:00 pm</span>
+<span class='badge badge-default'>00:00:13:124</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -172,16 +231,79 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>12:31:14 pm</td>
+        <td>3:33:47 pm</td>
         <td>
           LoginToAdminAndApproveNewlyAddedDoctorTest -> Test Execution Started
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>12:32:18 pm</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:34:00 pm</td>
         <td>
-          LoginToAdminAndApproveNewlyAddedDoctorTest -> Test Passed (63539 ms)
+          LoginToAdminAndApproveNewlyAddedDoctorTest -> Test Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:34:00 pm</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=148.0.7778.217)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4e65c9018981818e2eee2eb7fc25cbb9, findElement {value=//div[.='Aadhar card']/preceding-sibling::img[@alt='Aadhaar document'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\INNOVA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57107}, goog:processID: 6684, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57107/devtoo..., se:cdpVersion: 148.0.7778.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4e65c9018981818e2eee2eb7fc25cbb9
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy12.isDisplayed(Unknown Source)
+	at adminObjectRepository.DrIdentityProofPage.checkingEveryDocumentDoctorUploadedAndGivingFeeAndRating(DrIdentityProofPage.java:172)
+	at ophc.Sprint_1.LoginToAdminAndApproveNewlyAddedDoctorTest(Sprint_1.java:155)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>3:34:00 pm</td>
+        <td>
+          Unable to attach screenshot: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "ts" is null
         </td>
       </tr>
   </tbody>
@@ -189,25 +311,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="3"
+        <li class="test-item"  status="fail" test-id="3"
           author="ophc.Sprint_1"
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">rejectedDoctorReSubmitingDocumentsTest</p>
             <p class="text-sm">
-              <span>12:32:18 pm</span> / <span>00:01:30:506</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>3:34:00 pm</span> / <span>00:00:05:317</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">rejectedDoctorReSubmitingDocumentsTest</h5>
-<span class='badge badge-success'>06.20.2026 12:32:18 pm</span>
-<span class='badge badge-danger'>06.20.2026 12:33:48 pm</span>
-<span class='badge badge-default'>00:01:30:506</span>
+<h5 class="test-status text-fail">rejectedDoctorReSubmitingDocumentsTest</h5>
+<span class='badge badge-success'>06.20.2026 3:34:00 pm</span>
+<span class='badge badge-danger'>06.20.2026 3:34:06 pm</span>
+<span class='badge badge-default'>00:00:05:317</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -221,16 +343,79 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>12:32:18 pm</td>
+        <td>3:34:00 pm</td>
         <td>
           rejectedDoctorReSubmitingDocumentsTest -> Test Execution Started
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>12:33:48 pm</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:34:06 pm</td>
         <td>
-          rejectedDoctorReSubmitingDocumentsTest -> Test Passed (90507 ms)
+          rejectedDoctorReSubmitingDocumentsTest -> Test Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:34:06 pm</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=148.0.7778.217)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [626ebf105bb29d1a5706c6bd0eb596d9, findElement {value=//button[.=' Login '], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\INNOVA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57149}, goog:processID: 7464, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57149/devtoo..., se:cdpVersion: 148.0.7778.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 626ebf105bb29d1a5706c6bd0eb596d9
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
+	at doctorObjectRepository.LoginPage.loginToDoctor(LoginPage.java:50)
+	at ophc.Sprint_1.rejectedDoctorReSubmitingDocumentsTest(Sprint_1.java:187)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>3:34:06 pm</td>
+        <td>
+          Unable to attach screenshot: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "ts" is null
         </td>
       </tr>
   </tbody>
@@ -245,7 +430,7 @@
           <div class="test-detail">
             <p class="name">AdminApprovingDoctorAfterReuploadingDocs</p>
             <p class="text-sm">
-              <span>12:33:48 pm</span> / <span>00:00:05:106</span>
+              <span>3:34:06 pm</span> / <span>00:00:38:986</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -254,9 +439,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">AdminApprovingDoctorAfterReuploadingDocs</h5>
-<span class='badge badge-success'>06.20.2026 12:33:48 pm</span>
-<span class='badge badge-danger'>06.20.2026 12:33:54 pm</span>
-<span class='badge badge-default'>00:00:05:106</span>
+<span class='badge badge-success'>06.20.2026 3:34:06 pm</span>
+<span class='badge badge-danger'>06.20.2026 3:34:45 pm</span>
+<span class='badge badge-default'>00:00:38:986</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -270,31 +455,31 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>12:33:48 pm</td>
+        <td>3:34:06 pm</td>
         <td>
           AdminApprovingDoctorAfterReuploadingDocs -> Test Execution Started
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>12:33:54 pm</td>
+        <td>3:34:45 pm</td>
         <td>
           AdminApprovingDoctorAfterReuploadingDocs -> Test Failed
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>12:33:54 pm</td>
+        <td>3:34:45 pm</td>
         <td>
-          <textarea readonly class="code-block">org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//span[.=' ★ '])[5]"}
   (Session info: chrome=148.0.7778.217)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.34.0', revision: '707dcb4246*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6c5cd6858ecb1cfd1952b157f9142b15, findElement {value=//input[@name='userName'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\INNOVA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53019}, goog:processID: 10348, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53019/devtoo..., se:cdpVersion: 148.0.7778.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6c5cd6858ecb1cfd1952b157f9142b15
+Command: [262a9cc829fa0a509d8b3ce51c8e0b80, findElement {value=(//span[.=' ★ '])[5], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\INNOVA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57177}, goog:processID: 15996, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57177/devtoo..., se:cdpVersion: 148.0.7778.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 262a9cc829fa0a509d8b3ce51c8e0b80
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -309,11 +494,8 @@ Session ID: 6c5cd6858ecb1cfd1952b157f9142b15
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy12.sendKeys(Unknown Source)
-	at adminObjectRepository.AdminLoginPage.loginToAdmin(AdminLoginPage.java:49)
-	at ophc.Sprint_1.AdminApprovingDoctorAfterReuploadingDocs(Sprint_1.java:269)
+	at adminObjectRepository.DrIdentityProofPage.editDocumentDoctorUploadedAndGivingFeeAndRating(DrIdentityProofPage.java:233)
+	at ophc.Sprint_1.AdminApprovingDoctorAfterReuploadingDocs(Sprint_1.java:241)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -340,7 +522,7 @@ Session ID: 6c5cd6858ecb1cfd1952b157f9142b15
       </tr>
       <tr class="event-row">
         <td><span class="badge log warning-bg">Warning</span></td>
-        <td>12:33:54 pm</td>
+        <td>3:34:45 pm</td>
         <td>
           Unable to attach screenshot: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "ts" is null
         </td>
@@ -350,25 +532,25 @@ Session ID: 6c5cd6858ecb1cfd1952b157f9142b15
 </div>
           </div>
         </li>
-        <li class="test-item"  status="fail" test-id="5"
+        <li class="test-item"  status="pass" test-id="5"
           author="ophc.Sprint_1"
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">loginToDoctorPannelSettingDoctorAvailabilityTest</p>
+            <p class="name">loginToDoctorPannelTest</p>
             <p class="text-sm">
-              <span>12:33:54 pm</span> / <span>00:00:07:686</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>3:34:45 pm</span> / <span>00:00:08:511</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">loginToDoctorPannelSettingDoctorAvailabilityTest</h5>
-<span class='badge badge-success'>06.20.2026 12:33:54 pm</span>
-<span class='badge badge-danger'>06.20.2026 12:34:01 pm</span>
-<span class='badge badge-default'>00:00:07:686</span>
+<h5 class="test-status text-pass">loginToDoctorPannelTest</h5>
+<span class='badge badge-success'>06.20.2026 3:34:45 pm</span>
+<span class='badge badge-danger'>06.20.2026 3:34:53 pm</span>
+<span class='badge badge-default'>00:00:08:511</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -382,79 +564,16 @@ Session ID: 6c5cd6858ecb1cfd1952b157f9142b15
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>12:33:54 pm</td>
+        <td>3:34:45 pm</td>
         <td>
-          loginToDoctorPannelSettingDoctorAvailabilityTest -> Test Execution Started
+          loginToDoctorPannelTest -> Test Execution Started
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>12:34:01 pm</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:34:53 pm</td>
         <td>
-          loginToDoctorPannelSettingDoctorAvailabilityTest -> Test Failed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>12:34:01 pm</td>
-        <td>
-          <textarea readonly class="code-block">org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
-  (Session info: chrome=148.0.7778.217)
-Build info: version: '4.34.0', revision: '707dcb4246*'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0719c4e042266c9c5e5088133e7178c1, findElement {value=//input[@id='emailOrPhone'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\INNOVA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53045}, goog:processID: 19324, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53045/devtoo..., se:cdpVersion: 148.0.7778.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0719c4e042266c9c5e5088133e7178c1
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy12.sendKeys(Unknown Source)
-	at doctorObjectRepository.LoginPage.loginToDoctor(LoginPage.java:48)
-	at ophc.Sprint_1.loginToDoctorPannelSettingDoctorAvailabilityTest(Sprint_1.java:301)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-</textarea>
-          
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log warning-bg">Warning</span></td>
-        <td>12:34:01 pm</td>
-        <td>
-          Unable to attach screenshot: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "ts" is null
+          loginToDoctorPannelTest -> Test Passed (8510 ms)
         </td>
       </tr>
   </tbody>
@@ -475,7 +594,7 @@ Session ID: 0719c4e042266c9c5e5088133e7178c1
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
@@ -484,12 +603,12 @@ Session ID: 0719c4e042266c9c5e5088133e7178c1
 <span class="meta">
 <span class='badge log badge-danger'>2</span>
 </span>
-<p class="name">org.openqa.selenium.NoSuchSessionException</p>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
 <p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.NoSuchSessionException</h4>
+<h4>org.openqa.selenium.NoSuchElementException</h4>
 <span status="fail" class='badge log badge-danger'>2 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -503,16 +622,82 @@ Session ID: 0719c4e042266c9c5e5088133e7178c1
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>12:33:48 pm</td>
+<td>15:32:01 pm</td>
 <td>
-<a href="#" class="linked" test-id='4' id='4'>AdminApprovingDoctorAfterReuploadingDocs</a>
+<a href="#" class="linked" test-id='1' id='1'>DoctorRegistrationTest</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>12:33:54 pm</td>
+<td>15:34:06 pm</td>
 <td>
-<a href="#" class="linked" test-id='5' id='5'>loginToDoctorPannelSettingDoctorAvailabilityTest</a>
+<a href="#" class="linked" test-id='4' id='4'>AdminApprovingDoctorAfterReuploadingDocs</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchSessionException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchSessionException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:33:47 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>LoginToAdminAndApproveNewlyAddedDoctorTest</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchWindowException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchWindowException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:34:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>rejectedDoctorReSubmitingDocumentsTest</a>
 </td>
 </tr>
 </tbody>
@@ -538,8 +723,8 @@ Session ID: 0719c4e042266c9c5e5088133e7178c1
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>3</span>
-<span class='badge log badge-danger'>2</span>
+<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>4</span>
 </span>
 <p class="name">ophc.Sprint_1</p>
 <p class="duration text-sm">5 tests</p>
@@ -547,8 +732,8 @@ Session ID: 0719c4e042266c9c5e5088133e7178c1
 <div class="test-contents d-none">
 <div class="info">
 <h4>ophc.Sprint_1</h4>
-<span status="pass" class='badge log pass-bg'>3 passed</span>
-<span status="fail" class='badge log badge-danger'>2 failed</span>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>4 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -559,39 +744,39 @@ Session ID: 0719c4e042266c9c5e5088133e7178c1
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>12:28:29 pm</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:32:01 pm</td>
 <td>
 <a href="#" class="linked" test-id='1' id='1'>DoctorRegistrationTest</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>12:31:14 pm</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:33:47 pm</td>
 <td>
 <a href="#" class="linked" test-id='2' id='2'>LoginToAdminAndApproveNewlyAddedDoctorTest</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>12:32:18 pm</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:34:00 pm</td>
 <td>
 <a href="#" class="linked" test-id='3' id='3'>rejectedDoctorReSubmitingDocumentsTest</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>12:33:48 pm</td>
+<td>15:34:06 pm</td>
 <td>
 <a href="#" class="linked" test-id='4' id='4'>AdminApprovingDoctorAfterReuploadingDocs</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>12:33:54 pm</td>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:34:45 pm</td>
 <td>
-<a href="#" class="linked" test-id='5' id='5'>loginToDoctorPannelSettingDoctorAvailabilityTest</a>
+<a href="#" class="linked" test-id='5' id='5'>loginToDoctorPannelTest</a>
 </td>
 </tr>
 </tbody>
@@ -611,25 +796,25 @@ Session ID: 0719c4e042266c9c5e5088133e7178c1
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jun 20, 2026 12:28:29 pm</h3>
+<h3>Jun 20, 2026 03:32:01 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jun 20, 2026 12:34:01 pm</h3>
+<h3>Jun 20, 2026 03:34:53 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>3</h3>
+<h3>1</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>2</h3>
+<h3>4</h3>
 </div></div>
 </div>
 </div>
@@ -645,12 +830,12 @@ Session ID: 0719c4e042266c9c5e5088133e7178c1
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='60%'>
-<b>3</b> tests passed
+<div><small data-tooltip='20%'>
+<b>1</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='40%'><b>2</b> tests failed,
+<small data-tooltip='80%'><b>4</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -668,10 +853,10 @@ Session ID: 0719c4e042266c9c5e5088133e7178c1
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='21%'><b>3</b> events passed</small></div>
+<div><small data-tooltip='5%'><b>1</b> events passed</small></div>
 <div>
-<small data-tooltip='28%'><b>4</b> events failed,
-<b data-tooltip='%'>7</b> others
+<small data-tooltip='44%'><b>8</b> events failed,
+<b data-tooltip='%'>9</b> others
 </small>
 </div>
 </div>
@@ -687,7 +872,7 @@ Session ID: 0719c4e042266c9c5e5088133e7178c1
 </div></div>
 <script>
 var timeline = {
-"DoctorRegistrationTest":165.33,"LoginToAdminAndApproveNewlyAddedDoctorTest":63.538,"rejectedDoctorReSubmitingDocumentsTest":90.506,"AdminApprovingDoctorAfterReuploadingDocs":5.106,"loginToDoctorPannelSettingDoctorAvailabilityTest":7.686
+"DoctorRegistrationTest":106.293,"LoginToAdminAndApproveNewlyAddedDoctorTest":13.124,"rejectedDoctorReSubmitingDocumentsTest":5.317,"AdminApprovingDoctorAfterReuploadingDocs":38.986,"loginToDoctorPannelTest":8.511
 };
 </script>
 <div class="row">
@@ -699,11 +884,11 @@ var timeline = {
 <tbody>
 <tr>
 <td>ophc.Sprint_1</td>
-<td>3</td>
-<td>2</td>
+<td>1</td>
+<td>4</td>
 <td>0</td>
 <td>0</td>
-<td>60%</td>
+<td>20%</td>
 </tr>
 </tbody>
 </table></div>
@@ -744,8 +929,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 3,
-failParent: 2,
+passParent: 1,
+failParent: 4,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -761,9 +946,9 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 3,
-failEvents: 4,
-warningEvents: 2,
+passEvents: 1,
+failEvents: 8,
+warningEvents: 4,
 skipEvents: 0,
 infoEvents: 5
 };

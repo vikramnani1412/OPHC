@@ -1,5 +1,8 @@
 package patientObjectRepository;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,9 +14,12 @@ public class FeeDetailsPage {
     
     @FindBy(xpath="//img[@alt='close']")private WebElement CloseBtn;
     
-    @FindBy(xpath="//span[contains(.,'')]/following-sibling::span[.='9']")private WebElement TodaysDateBasedOnDate;
+    @FindBy(xpath="//span[contains(.,'')]/following-sibling::span[.='22']")private WebElement TodaysDateBasedOnDate;
     
-    @FindBy(xpath="(//span['Available'])[14]")private WebElement TodaysDateBasedOnIndex;
+    @FindBy(xpath="//div[@class='time-slot-card booked ng-star-inserted']")private WebElement Slot;
+  
+    
+    @FindBy(xpath="(//span[@class='day-date'])[1]")private WebElement TodaysDateBasedOnIndex;
     
     @FindBy(xpath="Available")private WebElement AvailablityBasedOnIndex;
     
@@ -67,6 +73,21 @@ public class FeeDetailsPage {
 	public WebElement getBookNowBtnBasedOnDoctorName() {
 		return BookNowBtnBasedOnDoctorName;
 	}
+	
+	
+	// Business Library
+	
+	public void bookingSlot(WebDriver driver)
+	{
+		List<WebElement> slots = driver.findElements(By.xpath("//div[@class='time-slot-card booked ng-star-inserted']"));
+
+			WebElement firstSlot = slots.get(0);
+			WebElement lastSlot = slots.get(slots.size() - 1);
+
+			System.out.println("Total Slots: " + slots.size());
+	}
+	
+	
 	
 	
 }

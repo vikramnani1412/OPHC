@@ -26,6 +26,7 @@ import genericUtilities.JavaUtility;
 import genericUtilities.PropertyFileUtility;
 import genericUtilities.WebDriverUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import patientObjectRepository.FindDoctorsPage;
 import patientObjectRepository.PatientLoginPage;
 import patientObjectRepository.PatientPage;
 import patientObjectRepository.PatientRegisterPage;
@@ -107,8 +108,10 @@ public class Total {
         lPage.getRegisterLnk().click();
 
         RegisterPage rPage = new RegisterPage(driver);
-        rPage.RegisterToDoctorApplication(driver, fakeName, fakeName + "@gmail.com", mobileNumber);
+        rPage.RegisterToDoctorApplication(driver, DataStore.doctorName, fakeName + "@gmail.com", mobileNumber);
 
+        System.out.println(fakeName+"  "+mobileNumber);
+        
         VerifyCodePage vcPage = new VerifyCodePage(driver);
         vcPage.enteringOtpAndClickOnVerifyBtn();
 
@@ -161,7 +164,7 @@ public class Total {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.get(adminURL);
 
-        System.out.println("Admin = " + DataStore.doctorName + " Admin Started Visiting Doctor Profile");
+        System.out.println(" Admin Started Visiting " + DataStore.doctorName + " Profile");
 
         AdminLoginPage alPage = new AdminLoginPage(driver);
         alPage.loginToAdmin(adminUsername, adminPassword);
@@ -313,8 +316,58 @@ public class Total {
         driver.quit();
     }
 
+//    @Test(priority = 6)
+//    public void PatientRegisteringTest() throws Exception {
+//
+//        patientFullName = jUtil.getRandomSingleName();
+//        patientEmail    = patientFullName + "@gmail.com";
+//        patientPhoneNo  = jUtil.getRandomMobileNum();
+//        patientOTP      = pUtil.readDataFromPropertyFile("potp");
+//        patientURL      = pUtil.readDataFromPropertyFile("patienturl");
+//        
+//        WebDriverManager.chromedriver().setup();
+//        WebDriver driver = new ChromeDriver();
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+//        driver.get(patientURL);
+//
+//        PatientHomePage phPage = new PatientHomePage(driver);
+//        phPage.getLoginBtn().click();
+//
+//        PatientLoginPage plPage = new PatientLoginPage(driver);
+//        plPage.clickOnRegisterLnk(driver);
+//
+//        PatientRegisterPage prPage = new PatientRegisterPage(driver);
+//        prPage.registerAsPatient(patientFullName, patientEmail, patientPhoneNo);
+//
+//        PatientVerifyCodePage vcPage = new PatientVerifyCodePage(driver);
+//        vcPage.enterOtpAndClickVerifyBtn(patientOTP);
+//
+//        driver.findElement(By.className("profile-avatar")).click();
+//
+//        WebElement nameElement = driver.findElement(By.xpath("//h4[contains(text(),'" + patientFullName + "')]"));
+//        wUtil.waitForElementToBeVisible(driver, nameElement);
+//
+//        if (nameElement.isDisplayed()) {
+//            String visibleName = nameElement.getText().trim();
+//            System.out.println("Expected Patient Name : " + patientFullName);
+//            System.out.println("Visible Patient Name  : " + visibleName);
+//            Assert.assertEquals(visibleName, patientFullName,
+//                    "Name mismatch! Expected: " + patientFullName + " but got: " + visibleName);
+//        }
+//
+//        PatientPage pPage = new PatientPage(driver);
+//        pPage.getPageCloseBtn().click();
+//        
+//        
+//        driver.quit();	
+//    	
+//    	
+//    }
+    
+    
     @Test(priority = 6)
-    public void PatientRegisteringTest() throws Exception {
+    public void PatientRegisteringAndBookingSameDoctorTest() throws Exception {
 
         patientFullName = jUtil.getRandomSingleName();
         patientEmail    = patientFullName + "@gmail.com";
@@ -328,6 +381,7 @@ public class Total {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get(patientURL);
 
+        // ─── Patient Registration ───────────────────────────────────────────────
         PatientHomePage phPage = new PatientHomePage(driver);
         phPage.getLoginBtn().click();
 
@@ -342,7 +396,8 @@ public class Total {
 
         driver.findElement(By.className("profile-avatar")).click();
 
-        WebElement nameElement = driver.findElement(By.xpath("//h4[contains(text(),'" + patientFullName + "')]"));
+        WebElement nameElement = driver.findElement(
+            By.xpath("//h4[contains(text(),'" + patientFullName + "')]"));
         wUtil.waitForElementToBeVisible(driver, nameElement);
 
         if (nameElement.isDisplayed()) {
@@ -355,7 +410,71 @@ public class Total {
 
         PatientPage pPage = new PatientPage(driver);
         pPage.getPageCloseBtn().click();
+        
+        FindDoctorsPage fdPage = new FindDoctorsPage(driver);
+        fdPage.BookingFrstDoctor();
+
+        WebElement searchBox = driver.findElement(By.xpath("(//h6[contains(.,'Dr')])[1]/../../following-sibling::div//button[.='Book Now']"));
+        wUtil.waitForElementToBeVisible(driver, searchBox);
+        searchBox.clear();
+        searchBox.sendKeys(DataStore.doctorName);
+        Thread.sleep(2000);
+
+        // Click search button if present — update XPath to match your UI
+        try {
+            WebElement searchBtn = driver.findElement(
+                By.xpath("//button[contains(text(),'Search') or @type='submit']"));
+            searchBtn.click();
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            System.out.println("No separate search button found, results may auto-load.");
+        }
+
+        // Verify doctor appears in results and click on doctor card
+        WebElement doctorCard = driver.findElement(
+            By.xpath("//*[contains(text(),'" + DataStore.doctorName + "')]"));
+        wUtil.waitForElementToBeVisible(driver, doctorCard);
+        Assert.assertTrue(doctorCard.isDisplayed(),
+            "Doctor " + DataStore.doctorName + " not found in search results!");
+        System.out.println("Doctor found in search results: " + DataStore.doctorName);
+        doctorCard.click();
+        Thread.sleep(2000);
+
+        // ─── Book Appointment with the Approved Doctor ───────────────────────────
+
+        // Click "Book Appointment" button — update XPath to match your UI
+        WebElement bookAppointmentBtn = driver.findElement(
+            By.xpath("//button[contains(text(),'Book') or contains(text(),'Appointment') or contains(text(),'Consult')]"));
+        wUtil.waitForElementToBeClickable(driver, bookAppointmentBtn);
+        bookAppointmentBtn.click();
+        Thread.sleep(2000);
+
+        // Select available slot (first available slot) — update XPath to match your UI
+        WebElement availableSlot = driver.findElement(
+            By.xpath("(//div[contains(@class,'slot') or contains(@class,'time') or contains(@class,'available')])[1]"));
+        wUtil.waitForElementToBeClickable(driver, availableSlot);
+        availableSlot.click();
+        Thread.sleep(1000);
+        System.out.println("Appointment slot selected.");
+
+        // Confirm the booking — update XPath to match your UI
+        WebElement confirmBtn = driver.findElement(
+            By.xpath("//button[contains(text(),'Confirm') or contains(text(),'Proceed') or contains(text(),'Pay')]"));
+        wUtil.waitForElementToBeClickable(driver, confirmBtn);
+        confirmBtn.click();
+        Thread.sleep(2000);
+
+        // ─── Verify Appointment Booked Successfully ──────────────────────────────
+
+        // Verify success message or confirmation screen — update XPath to match your UI
+        WebElement successMsg = driver.findElement(
+            By.xpath("//*[contains(text(),'Success') or contains(text(),'Booked') or contains(text(),'Confirmed') or contains(text(),'Appointment')]"));
+        wUtil.waitForElementToBeVisible(driver, successMsg);
+        Assert.assertTrue(successMsg.isDisplayed(),
+            "Appointment booking confirmation not displayed!");
+        System.out.println("Appointment booked successfully with Doctor: " + DataStore.doctorName);
 
         driver.quit();
     }
+    
 }
