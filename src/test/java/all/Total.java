@@ -30,10 +30,13 @@ import genericUtilities.WebDriverUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import patientObjectRepository.FeeDetailsPage;
 import patientObjectRepository.FindDoctorsPage;
+import patientObjectRepository.HowDoYouWantToConsultPage;
 import patientObjectRepository.PatientLoginPage;
 import patientObjectRepository.PatientPage;
 import patientObjectRepository.PatientRegisterPage;
 import patientObjectRepository.PatientVerifyCodePage;
+import patientObjectRepository.RazorpayNetBankingPage;
+import patientObjectRepository.RazorpayOPHC;
 
 public class Total {
 
@@ -386,20 +389,19 @@ public class Total {
         fdPage.clickOnBookNowBtn();
         Thread.sleep(1000);
         
-        driver.findElement(By.xpath("(//input[@type='checkbox'])[1]")).click();
+        HowDoYouWantToConsultPage hPage = new HowDoYouWantToConsultPage(driver);
+        hPage.CompleteHowDoYouWantToConsultDetailsAndClickOnContinueBtn();
+        Thread.sleep(2000);
         
+        RazorpayOPHC rPage = new RazorpayOPHC(driver);
+        rPage.getNetBankingLnk().click();
+        Thread.sleep(2000);
+        
+        RazorpayNetBankingPage rnPage = new RazorpayNetBankingPage(driver);
+        rnPage.bookSlotUsingSBIbank(driver);
         Thread.sleep(1000);
         
-        driver.findElement(By.xpath("(//input[@type='checkbox'])[2]")).click();
-
-        Thread.sleep(1000);
-        
-        driver.findElement(By.xpath("(//input[@type='checkbox'])[3]")).click();
-        
-        Thread.sleep(1000);
-        
-        driver.findElement(By.xpath("//button[.=' Continue ']")).click();
-      
+//      
    }   
     
     

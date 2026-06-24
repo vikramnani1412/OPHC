@@ -1,33 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-24T10:40:00 IST" name="Default suite" finished-at="2026-06-24T10:45:34 IST" duration-ms="334347">
+  <suite started-at="2026-06-24T15:52:24 IST" name="Default suite" finished-at="2026-06-24T15:53:15 IST" duration-ms="50456">
     <groups>
     </groups>
-    <test started-at="2026-06-24T10:40:00 IST" name="Default test" finished-at="2026-06-24T10:45:34 IST" duration-ms="334347">
+    <test started-at="2026-06-24T15:52:24 IST" name="Default test" finished-at="2026-06-24T15:53:15 IST" duration-ms="50456">
       <class name="all.Total">
-        <test-method signature="DoctorRegistrationTest()[pri:1, instance:all.Total@2d1ef81a]" started-at="2026-06-24T10:40:00 IST" name="DoctorRegistrationTest" finished-at="2026-06-24T10:42:21 IST" duration-ms="141116" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DoctorRegistrationTest -->
-        <test-method signature="LoginToAdminAndApproveNewlyAddedDoctorTest()[pri:2, instance:all.Total@2d1ef81a]" started-at="2026-06-24T10:42:21 IST" name="LoginToAdminAndApproveNewlyAddedDoctorTest" finished-at="2026-06-24T10:43:06 IST" duration-ms="44843" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginToAdminAndApproveNewlyAddedDoctorTest -->
-        <test-method signature="rejectedDoctorReSubmitingDocumentsTest()[pri:3, instance:all.Total@2d1ef81a]" started-at="2026-06-24T10:43:06 IST" name="rejectedDoctorReSubmitingDocumentsTest" finished-at="2026-06-24T10:44:09 IST" duration-ms="63302" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- rejectedDoctorReSubmitingDocumentsTest -->
-        <test-method signature="AdminApprovingDoctorAfterReuploadingDocs()[pri:4, instance:all.Total@2d1ef81a]" started-at="2026-06-24T10:44:09 IST" name="AdminApprovingDoctorAfterReuploadingDocs" finished-at="2026-06-24T10:44:32 IST" duration-ms="22991" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AdminApprovingDoctorAfterReuploadingDocs -->
-        <test-method signature="loginToDoctorPannelSettingDoctorAvailabilityTest()[pri:5, instance:all.Total@2d1ef81a]" started-at="2026-06-24T10:44:32 IST" name="loginToDoctorPannelSettingDoctorAvailabilityTest" finished-at="2026-06-24T10:44:51 IST" duration-ms="18973" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginToDoctorPannelSettingDoctorAvailabilityTest -->
-        <test-method signature="PatientRegisteringAndBookingSameDoctorTest()[pri:6, instance:all.Total@2d1ef81a]" started-at="2026-06-24T10:44:51 IST" name="PatientRegisteringAndBookingSameDoctorTest" finished-at="2026-06-24T10:45:34 IST" duration-ms="43074" status="PASS">
+        <test-method signature="PatientRegisteringAndBookingSameDoctorTest()[pri:6, instance:all.Total@45752059]" started-at="2026-06-24T15:52:24 IST" name="PatientRegisteringAndBookingSameDoctorTest" finished-at="2026-06-24T15:53:15 IST" duration-ms="50395" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PatientRegisteringAndBookingSameDoctorTest -->

@@ -9,6 +9,8 @@ public class HowDoYouWantToConsultPage {
 
     //Rule-1 :  Finding WebElements Using @FindBy Annotations
     
+	@FindBy(xpath="//img[@alt='close']")private WebElement CloseBtn;
+	
     @FindBy(xpath="//div[@class='radio active']")private WebElement VideoCallRadioBtn;
     
     @FindBy(xpath="//input[@id='termsCheckbox']")private WebElement TermsChkbox;
@@ -35,6 +37,11 @@ public class HowDoYouWantToConsultPage {
 	}
 
 
+	public WebElement getCloseBtn() {
+		return CloseBtn;
+	}
+
+
 	public WebElement getTermsChkbox() {
 		return TermsChkbox;
 	}
@@ -54,4 +61,18 @@ public class HowDoYouWantToConsultPage {
 		return ContinueBtn;
 	}
 	
+	// Business Library
+	
+	public void CompleteHowDoYouWantToConsultDetailsAndClickOnContinueBtn() throws Exception
+	{
+		Thread.sleep(2000);
+		TermsChkbox.click();
+		Thread.sleep(2000);
+		GuidelinesChkbox.click();
+		Thread.sleep(2000);
+		RefundCancellationChkbox.click();
+		Thread.sleep(2000);
+		ContinueBtn.click();
+		Thread.sleep(2000);
+	}
 }
