@@ -22,14 +22,14 @@ public class FindDoctorsPage {
     
     @FindBy(xpath="(//h6[contains(.,'Dr')])[1]")private WebElement FirstDoctor;
     
-    @FindBy(xpath="//h6[contains(.,'Vicky')]/../../following-sibling::div//button[.='Book Now']")private WebElement DoctorBasedOnName;
+    @FindBy(xpath="//h6[.='Dr. Automation']/../../following-sibling::div//button[.='Book Now']")private WebElement DoctorBasedOnName;
     
     @FindBy(xpath="(//h6[contains(.,'Dr')])[1]/../../following-sibling::div//button[.='Book Now']")private WebElement FirstDoctorBookNowBtn;
     
     @FindBy(xpath="//h6[.='Dr. ophc tester']/../../following-sibling::div//button[.='Book Now']")private WebElement BookNowBtnBasedOnDoctorName;
   
     @FindBy(xpath="(//button[.='Book Now'])[1]")private WebElement BookNowBtnBasedOnIndex;
-    
+  
         
 	//Rule-3:Create a constructor to initilise these elements    
     

@@ -393,6 +393,8 @@ public class Total {
         hPage.CompleteHowDoYouWantToConsultDetailsAndClickOnContinueBtn();
         Thread.sleep(2000);
         
+        // Wanted to switch to frame.
+        
         RazorpayOPHC rPage = new RazorpayOPHC(driver);
         rPage.getNetBankingLnk().click();
         Thread.sleep(2000);
