@@ -5,7 +5,7 @@
     <classes>
       <class name="all.Total">
         <methods>
-          <include name="DoctorRegistrationTest"/>
+          <include name="PatientRegisteringAndBookingSameDoctorTest"/>
         </methods>
       </class> <!-- all.Total -->
     </classes>

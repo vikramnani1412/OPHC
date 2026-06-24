@@ -1,6 +1,8 @@
 package all;
 
 import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,6 +28,7 @@ import genericUtilities.JavaUtility;
 import genericUtilities.PropertyFileUtility;
 import genericUtilities.WebDriverUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import patientObjectRepository.FeeDetailsPage;
 import patientObjectRepository.FindDoctorsPage;
 import patientObjectRepository.PatientLoginPage;
 import patientObjectRepository.PatientPage;
@@ -381,7 +384,7 @@ public class Total {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get(patientURL);
 
-        // ─── Patient Registration ───────────────────────────────────────────────
+        // ─── Patient Registration ───────────────────────────────────────
         PatientHomePage phPage = new PatientHomePage(driver);
         phPage.getLoginBtn().click();
 
@@ -411,70 +414,45 @@ public class Total {
         PatientPage pPage = new PatientPage(driver);
         pPage.getPageCloseBtn().click();
         
-        FindDoctorsPage fdPage = new FindDoctorsPage(driver);
-        fdPage.BookingFrstDoctor();
-
-        WebElement searchBox = driver.findElement(By.xpath("(//h6[contains(.,'Dr')])[1]/../../following-sibling::div//button[.='Book Now']"));
-        wUtil.waitForElementToBeVisible(driver, searchBox);
-        searchBox.clear();
-        searchBox.sendKeys(DataStore.doctorName);
         Thread.sleep(2000);
-
-        // Click search button if present — update XPath to match your UI
-        try {
-            WebElement searchBtn = driver.findElement(
-                By.xpath("//button[contains(text(),'Search') or @type='submit']"));
-            searchBtn.click();
-            Thread.sleep(2000);
-        } catch (Exception e) {
-            System.out.println("No separate search button found, results may auto-load.");
-        }
-
-        // Verify doctor appears in results and click on doctor card
-        WebElement doctorCard = driver.findElement(
-            By.xpath("//*[contains(text(),'" + DataStore.doctorName + "')]"));
-        wUtil.waitForElementToBeVisible(driver, doctorCard);
-        Assert.assertTrue(doctorCard.isDisplayed(),
-            "Doctor " + DataStore.doctorName + " not found in search results!");
-        System.out.println("Doctor found in search results: " + DataStore.doctorName);
-        doctorCard.click();
+        
+        FindDoctorsPage fdocPage = new FindDoctorsPage(driver);
+        fdocPage.BookingFrstDoctor();
+        
         Thread.sleep(2000);
-
-        // ─── Book Appointment with the Approved Doctor ───────────────────────────
-
-        // Click "Book Appointment" button — update XPath to match your UI
-        WebElement bookAppointmentBtn = driver.findElement(
-            By.xpath("//button[contains(text(),'Book') or contains(text(),'Appointment') or contains(text(),'Consult')]"));
-        wUtil.waitForElementToBeClickable(driver, bookAppointmentBtn);
-        bookAppointmentBtn.click();
+        
+        
+//        List<WebElement> elements = driver.findElements(By.xpath("//div[@class='day-item ng-star-inserted']"));
+//        int count = elements.size();
+//        System.out.println(count);
+        
+        FeeDetailsPage fdPage = new FeeDetailsPage(driver);
+//        fdPage.bookingSlot(driver);
+        
+        fdPage.clickOnFrstAvailableSlot();
         Thread.sleep(2000);
-
-        // Select available slot (first available slot) — update XPath to match your UI
-        WebElement availableSlot = driver.findElement(
-            By.xpath("(//div[contains(@class,'slot') or contains(@class,'time') or contains(@class,'available')])[1]"));
-        wUtil.waitForElementToBeClickable(driver, availableSlot);
-        availableSlot.click();
+        
+        fdPage.clickOnBookNowBtn();
         Thread.sleep(1000);
-        System.out.println("Appointment slot selected.");
+        
+        driver.findElement(By.xpath("(//input[@type='checkbox'])[1]")).click();
+        
+        Thread.sleep(1000);
+        
+        driver.findElement(By.xpath("(//input[@type='checkbox'])[2]")).click();
 
-        // Confirm the booking — update XPath to match your UI
-        WebElement confirmBtn = driver.findElement(
-            By.xpath("//button[contains(text(),'Confirm') or contains(text(),'Proceed') or contains(text(),'Pay')]"));
-        wUtil.waitForElementToBeClickable(driver, confirmBtn);
-        confirmBtn.click();
-        Thread.sleep(2000);
-
-        // ─── Verify Appointment Booked Successfully ──────────────────────────────
-
-        // Verify success message or confirmation screen — update XPath to match your UI
-        WebElement successMsg = driver.findElement(
-            By.xpath("//*[contains(text(),'Success') or contains(text(),'Booked') or contains(text(),'Confirmed') or contains(text(),'Appointment')]"));
-        wUtil.waitForElementToBeVisible(driver, successMsg);
-        Assert.assertTrue(successMsg.isDisplayed(),
-            "Appointment booking confirmation not displayed!");
-        System.out.println("Appointment booked successfully with Doctor: " + DataStore.doctorName);
-
-        driver.quit();
-    }
+        Thread.sleep(1000);
+        
+        driver.findElement(By.xpath("(//input[@type='checkbox'])[3]")).click();
+        
+        Thread.sleep(1000);
+        
+        driver.findElement(By.xpath("//button[.=' Continue ']")).click();
+      
+   }   
+    
+    
+    
+    
     
 }

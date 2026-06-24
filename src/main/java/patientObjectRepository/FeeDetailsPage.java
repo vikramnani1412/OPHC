@@ -16,14 +16,25 @@ public class FeeDetailsPage {
     
     @FindBy(xpath="//span[contains(.,'')]/following-sibling::span[.='22']")private WebElement TodaysDateBasedOnDate;
     
-    @FindBy(xpath="//div[@class='time-slot-card booked ng-star-inserted']")private WebElement Slot;
+    @FindBy(xpath="(//span[.='Available'])[1]")private WebElement FirstAvailableSlot;
+    
+    @FindBy(xpath="(//span[.='Available']/preceding-sibling::span[contains(.,'')])[1]")private WebElement FirstAvailableTime;
+    
+    @FindBy(xpath="//div[@class='time-slot-card booked ng-star-inserted']")private WebElement DaySlot;
+    
+    @FindBy(xpath="//span[contains(.,'9:00 AM')]/following-sibling::span[.='Available']")private WebElement DateSlot;
   
+    @FindBy(xpath="//div[@class='day-item ng-star-inserted']")private WebElement AllTimeSlots;
+    
+    @FindBy(xpath="(//div[@class='day-item ng-star-inserted'])[1]")private WebElement FirstTimeSlot;
+    
+    @FindBy(xpath="(//div[@class='day-item ng-star-inserted'])[last()]")private WebElement LastTimeSlot;
     
     @FindBy(xpath="(//span[@class='day-date'])[1]")private WebElement TodaysDateBasedOnIndex;
     
     @FindBy(xpath="Available")private WebElement AvailablityBasedOnIndex;
     
-    @FindBy(xpath="//div[@class='slots-legend']/following-sibling::button[contains(.,' Book Now')]")private WebElement BooknowBtn;
+    @FindBy(xpath="//div[@class='slots-legend']/following-sibling::button[contains(.,' Book Now')]")private WebElement BookNowBtn;
         
     @FindBy(xpath="//button[.='Follow up']")private WebElement BookNowBtnBasedOnIndex;
     
@@ -50,6 +61,26 @@ public class FeeDetailsPage {
 	}
 
 
+	public WebElement getFirstAvailableTime() {
+		return FirstAvailableTime;
+	}
+
+
+	public WebElement getLastTimeSlot() {
+		return LastTimeSlot;
+	}
+
+
+	public WebElement getFirstAvailableSlot() {
+		return FirstAvailableSlot;
+	}
+
+
+	public WebElement getFirstTimeSlot() {
+		return FirstTimeSlot;
+	}
+
+
 	public WebElement getTodaysDateBasedOnIndex() {
 		return TodaysDateBasedOnIndex;
 	}
@@ -60,8 +91,23 @@ public class FeeDetailsPage {
 	}
 
 
-	public WebElement getBooknowBtn() {
-		return BooknowBtn;
+	public WebElement getDaySlot() {
+		return DaySlot;
+	}
+
+
+	public WebElement getDateSlot() {
+		return DateSlot;
+	}
+
+
+	public WebElement getAllTimeSlots() {
+		return AllTimeSlots;
+	}
+
+
+	public WebElement getBookNowBtn() {
+		return BookNowBtn;
 	}
 
 
@@ -77,17 +123,62 @@ public class FeeDetailsPage {
 	
 	// Business Library
 	
-	public void bookingSlot(WebDriver driver)
-	{
-		List<WebElement> slots = driver.findElements(By.xpath("//div[@class='time-slot-card booked ng-star-inserted']"));
+	public void bookingSlot(WebDriver driver) throws Exception {
+	    
+//	    List<WebElement> allSlots = driver.findElements(By.xpath("//div[@class='day-item ng-star-inserted']"));
+//	    System.out.println("Total Slots: " + allSlots.size());
+//        Thread.sleep(2000);
+//	    for(int i=1;i<=allSlots.size();i++)
+//	    {
+//	    	try {
+//	    		if(FirstAvailableSlot.isDisplayed())
+//		    	{
+////	    			driver.findElements(By.xpath("(//div[@class='day-item ng-star-inserted'])[i]"));
+//		    		FirstAvailableSlot.click();
+//		    		System.out.println(FirstAvailableTime.getText());
+//		    	}
+//	    		BookNowBtn.click();
+//	    		break;
+//			} catch (Exception e) {
+//				
+////				driver.findElements(By.xpath("(//div[@class='day-item ng-star-inserted'])["+i+"]")).click();
+////				System.out.println("Checking");
+//			}
+//	    }
+		
+		
+		List<WebElement> allSlots = driver.findElements(By.xpath("//div[@class='day-item ng-star-inserted']"));
 
-			WebElement firstSlot = slots.get(0);
-			WebElement lastSlot = slots.get(slots.size() - 1);
+		for (int i = 1; i <= 5; i++) {
 
-			System.out.println("Total Slots: " + slots.size());
+		    driver.findElement(
+		            By.xpath("(//div[@class='day-item ng-star-inserted'])[" + i + "]")).click();
+
+		    try {
+		        if (FirstAvailableTime.isDisplayed()) {
+
+		            FirstAvailableTime.click();
+		            System.out.println("Available time found");
+		            break;
+		        }
+		    } catch (Exception e) {
+		        System.out.println("No available time in slot " + i);
+		    }
+		}
+
 	}
 	
+	public void clickOnBookNowBtn() throws Exception
+	{
+		Thread.sleep(2000);
+		BookNowBtn.click();
+	}
 	
+	public void clickOnFrstAvailableSlot() throws Exception
+	{
+		Thread.sleep(2000);
+		FirstAvailableSlot.click();
+	}
 	
 	
 }

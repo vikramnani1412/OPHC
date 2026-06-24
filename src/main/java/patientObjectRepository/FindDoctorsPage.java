@@ -20,9 +20,9 @@ public class FindDoctorsPage {
     
     @FindBy(xpath="//button[.='Follow up']")private WebElement FollowUpBtn;
     
-    @FindBy(xpath="(//h6[contains(.,'Dr')])[1]")private WebElement FirstDoctor;
+    @FindBy(xpath="(//h6[contains(.,'Dr')])[2]")private WebElement FirstDoctor;
     
-    @FindBy(xpath="(//h6[contains(.,'Dr')])[1]/../../following-sibling::div//button[.='Book Now']")private WebElement FirstDoctorBookNowBtn;
+    @FindBy(xpath="(//h6[contains(.,'Dr')])[2]/../../following-sibling::div//button[.='Book Now']")private WebElement FirstDoctorBookNowBtn;
     
     @FindBy(xpath="//h6[.='Dr. ophc tester']/../../following-sibling::div//button[.='Book Now']")private WebElement BookNowBtnBasedOnDoctorName;
   
