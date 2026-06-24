@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AppointmentConformedPage {
+public class AppointmentConfirmedPage {
 
     //Rule-1: Finding WebElements Using @FindBy Annotations
     
@@ -20,7 +20,7 @@ public class AppointmentConformedPage {
   
 	//Rule-2: Create a constructor to initilise these elements    
     
-	public AppointmentConformedPage(WebDriver driver)
+	public AppointmentConfirmedPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}

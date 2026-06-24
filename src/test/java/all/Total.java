@@ -318,55 +318,6 @@ public class Total {
         System.out.println("Doctor Availability Slot Added Successfully");
         driver.quit();
     }
-
-//    @Test(priority = 6)
-//    public void PatientRegisteringTest() throws Exception {
-//
-//        patientFullName = jUtil.getRandomSingleName();
-//        patientEmail    = patientFullName + "@gmail.com";
-//        patientPhoneNo  = jUtil.getRandomMobileNum();
-//        patientOTP      = pUtil.readDataFromPropertyFile("potp");
-//        patientURL      = pUtil.readDataFromPropertyFile("patienturl");
-//        
-//        WebDriverManager.chromedriver().setup();
-//        WebDriver driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-//        driver.get(patientURL);
-//
-//        PatientHomePage phPage = new PatientHomePage(driver);
-//        phPage.getLoginBtn().click();
-//
-//        PatientLoginPage plPage = new PatientLoginPage(driver);
-//        plPage.clickOnRegisterLnk(driver);
-//
-//        PatientRegisterPage prPage = new PatientRegisterPage(driver);
-//        prPage.registerAsPatient(patientFullName, patientEmail, patientPhoneNo);
-//
-//        PatientVerifyCodePage vcPage = new PatientVerifyCodePage(driver);
-//        vcPage.enterOtpAndClickVerifyBtn(patientOTP);
-//
-//        driver.findElement(By.className("profile-avatar")).click();
-//
-//        WebElement nameElement = driver.findElement(By.xpath("//h4[contains(text(),'" + patientFullName + "')]"));
-//        wUtil.waitForElementToBeVisible(driver, nameElement);
-//
-//        if (nameElement.isDisplayed()) {
-//            String visibleName = nameElement.getText().trim();
-//            System.out.println("Expected Patient Name : " + patientFullName);
-//            System.out.println("Visible Patient Name  : " + visibleName);
-//            Assert.assertEquals(visibleName, patientFullName,
-//                    "Name mismatch! Expected: " + patientFullName + " but got: " + visibleName);
-//        }
-//
-//        PatientPage pPage = new PatientPage(driver);
-//        pPage.getPageCloseBtn().click();
-//        
-//        
-//        driver.quit();	
-//    	
-//    	
-//    }
     
     
     @Test(priority = 6)
