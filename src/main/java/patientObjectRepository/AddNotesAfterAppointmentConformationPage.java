@@ -43,6 +43,16 @@ public class AddNotesAfterAppointmentConformationPage {
 		return SaveNotesBtn;
 	}
 	
+	// Business Library
+	
+	public void addNote(String Msg) throws Exception
+	{
+		Thread.sleep(2000);
+		TypeNotesEdt.sendKeys("Msg");
+		Thread.sleep(2000);
+		SaveNotesBtn.click();
+	}
+	
 
 	
 }

@@ -2,18 +2,19 @@ package all;
 
 import java.time.Duration;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import adminObjectRepository.AdminDashboardPage;
 import adminObjectRepository.AdminLoginPage;
 import adminObjectRepository.DrIdentityProofPage;
 import adminObjectRepository.DrKycManagementPage;
 import adminObjectRepository.PatientHomePage;
+
 import doctorObjectRepository.ApplicationFormPage;
 import doctorObjectRepository.DocumentUploadPage;
 import doctorObjectRepository.DocumentsUploadAfterKycRejecting;
@@ -22,39 +23,49 @@ import doctorObjectRepository.ProfileUnderVerificationPage;
 import doctorObjectRepository.RegisterPage;
 import doctorObjectRepository.VerifyCodePage;
 import doctorObjectRepository.WelcomePage;
+
 import genericUtilities.DataStore;
 import genericUtilities.ExcelFileUtility;
 import genericUtilities.JavaUtility;
 import genericUtilities.PropertyFileUtility;
 import genericUtilities.WebDriverUtility;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
+
+import patientObjectRepository.AppointmentConfirmedPage;
+import patientObjectRepository.AppointmentsPage;
 import patientObjectRepository.FeeDetailsPage;
 import patientObjectRepository.FindDoctorsPage;
 import patientObjectRepository.HowDoYouWantToConsultPage;
+import patientObjectRepository.PatientDetailsPage;
 import patientObjectRepository.PatientLoginPage;
 import patientObjectRepository.PatientPage;
 import patientObjectRepository.PatientRegisterPage;
 import patientObjectRepository.PatientVerifyCodePage;
 import patientObjectRepository.RazorpayNetBankingPage;
 import patientObjectRepository.RazorpayOPHC;
+import patientObjectRepository.UploadMedicalReportsAfterAppointmentConfirmPage;
 
 public class Total {
 
-    WebDriverUtility     wUtil = new WebDriverUtility();
-    JavaUtility          jUtil = new JavaUtility();
-    ExcelFileUtility     eUtil = new ExcelFileUtility();
-    PropertyFileUtility  pUtil = new PropertyFileUtility();
+    WebDriverUtility    wUtil = new WebDriverUtility();
+    JavaUtility         jUtil = new JavaUtility();
+    ExcelFileUtility    eUtil = new ExcelFileUtility();
+    PropertyFileUtility pUtil = new PropertyFileUtility();
 
+    // URLs & admin credentials
     String doctorURL;
     String adminURL;
     String adminUsername;
     String adminPassword;
     String patientURL;
 
+    // Doctor identity
     String fakeName;
     String firstName;
     String mobileNumber;
 
+    // Doctor document paths
     String imagePath;
     String medicalCertificate;
     String nmcCertificate;
@@ -63,6 +74,7 @@ public class Total {
     String experience;
     String affiliationProof;
 
+    // KYC / fee / rating data
     String firstRating;
     String consultancyFee;
     String editFirstRating;
@@ -72,13 +84,14 @@ public class Total {
 
     int doctorNumber = 1;
 
+    // Patient data
     String patientFullName;
     String patientEmail;
     String patientPhoneNo;
     String patientOTP;
-
     String phoneNumber;
-
+    
+    // doctor registration
     @Test(priority = 1)
     public void DoctorRegistrationTest() throws Exception {
 
@@ -114,10 +127,11 @@ public class Total {
         lPage.getRegisterLnk().click();
 
         RegisterPage rPage = new RegisterPage(driver);
-        rPage.RegisterToDoctorApplication(driver, DataStore.doctorName, fakeName + "@gmail.com", mobileNumber);
+        rPage.RegisterToDoctorApplication(driver, DataStore.doctorName,
+                fakeName + "@gmail.com", mobileNumber);
 
-        System.out.println(fakeName+"  "+mobileNumber);
-        
+        System.out.println(fakeName + "  " + mobileNumber);
+
         VerifyCodePage vcPage = new VerifyCodePage(driver);
         vcPage.enteringOtpAndClickOnVerifyBtn();
 
@@ -127,21 +141,22 @@ public class Total {
         Thread.sleep(2000);
         wUtil.scrollPageUp(2);
 
-        driver.findElement(By.xpath("//span[.='Medical Degree  Certificate']/../preceding-sibling::input")).sendKeys(medicalCertificate);
+        driver.findElement(By.xpath("//span[.='Medical Degree  Certificate']/../preceding-sibling::input"))         .sendKeys(medicalCertificate);
         Thread.sleep(2000);
         driver.findElement(By.xpath("//span[.='NMC / State Medical Council Certificate']/../preceding-sibling::input")).sendKeys(nmcCertificate);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//span[.='Aadhaar Card']/../preceding-sibling::input")).sendKeys(aadhar);
+        driver.findElement(By.xpath("//span[.='Aadhaar Card']/../preceding-sibling::input"))                         .sendKeys(aadhar);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//span[.='PAN Card']/../preceding-sibling::input")).sendKeys(pan);
+        driver.findElement(By.xpath("//span[.='PAN Card']/../preceding-sibling::input"))                               .sendKeys(pan);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//span[.='Experience  Certificate']/../preceding-sibling::input")).sendKeys(experience);
+        driver.findElement(By.xpath("//span[.='Experience  Certificate']/../preceding-sibling::input"))               .sendKeys(experience);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//span[.='Clinic / Hospital  Affiliation Proof']/../preceding-sibling::input")).sendKeys(affiliationProof);
+        driver.findElement(By.xpath("//span[.='Clinic / Hospital  Affiliation Proof']/../preceding-sibling::input"))   .sendKeys(affiliationProof);
         Thread.sleep(2000);
 
         DocumentUploadPage duPage = new DocumentUploadPage(driver);
-        duPage.documentsUploading(driver, medicalCertificate, nmcCertificate, aadhar, pan, experience, affiliationProof);
+        duPage.documentsUploading(driver, medicalCertificate, nmcCertificate,
+                aadhar, pan, experience, affiliationProof);
 
         Thread.sleep(2000);
 
@@ -151,7 +166,7 @@ public class Total {
         System.out.println("Registration Completed");
         driver.quit();
     }
-
+    // admin approves / rejects new doctor
     @Test(priority = 2)
     public void LoginToAdminAndApproveNewlyAddedDoctorTest() throws Throwable {
 
@@ -181,16 +196,19 @@ public class Total {
         Thread.sleep(2000);
 
         DrKycManagementPage kycmngPage = new DrKycManagementPage(driver);
-        kycmngPage.ComparingNewlyRegisteredDoctorAndFirstDoctorInAdminPannelAndClickPreviewBtn(driver, DataStore.doctorName, doctorNumber);
+        kycmngPage.ComparingNewlyRegisteredDoctorAndFirstDoctorInAdminPannelAndClickPreviewBtn(
+                driver, DataStore.doctorName, doctorNumber);
         Thread.sleep(2000);
 
         DrIdentityProofPage dipPage = new DrIdentityProofPage(driver);
-        dipPage.checkingEveryDocumentDoctorUploadedAndGivingFeeAndRating(driver, firstRating, consultancyFee);
+        dipPage.checkingEveryDocumentDoctorUploadedAndGivingFeeAndRating(
+                driver, firstRating, consultancyFee);
         Thread.sleep(2000);
 
         kycmngPage.clickOnFrstDoctorPreviewButton(driver);
         Thread.sleep(2000);
-        dipPage.editDocumentDoctorUploadedAndGivingFeeAndRating(driver, editFirstRating, editConsultancyFee);
+        dipPage.editDocumentDoctorUploadedAndGivingFeeAndRating(
+                driver, editFirstRating, editConsultancyFee);
         Thread.sleep(2000);
 
         kycmngPage.clickOnFrstDoctorPreviewButton(driver);
@@ -201,6 +219,7 @@ public class Total {
         driver.quit();
     }
 
+    // rejected doctor re-submits documents
     @Test(priority = 3)
     public void rejectedDoctorReSubmitingDocumentsTest() throws Exception {
 
@@ -228,7 +247,8 @@ public class Total {
         vcPage.enteringOtpAndClickOnVerifyBtn();
         Thread.sleep(1000);
 
-        WebElement profileRejectMsg = driver.findElement(By.xpath("//p[.='Your Profile is Rejected']"));
+        WebElement profileRejectMsg = driver.findElement(
+                By.xpath("//p[.='Your Profile is Rejected']"));
         if (profileRejectMsg.isDisplayed()) {
             Thread.sleep(1000);
             driver.findElement(By.xpath("//a[.='Upload Documents']")).click();
@@ -236,21 +256,22 @@ public class Total {
 
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath("//span[.='Medical Degree  Certificate']/../preceding-sibling::input")).sendKeys(medicalCertificate);
+        driver.findElement(By.xpath("//span[.='Medical Degree  Certificate']/../preceding-sibling::input"))         .sendKeys(medicalCertificate);
         Thread.sleep(2000);
         driver.findElement(By.xpath("//span[.='NMC / State Medical Council Certificate']/../preceding-sibling::input")).sendKeys(nmcCertificate);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//span[.='Aadhaar Card']/../preceding-sibling::input")).sendKeys(aadhar);
+        driver.findElement(By.xpath("//span[.='Aadhaar Card']/../preceding-sibling::input"))                         .sendKeys(aadhar);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//span[.='PAN Card']/../preceding-sibling::input")).sendKeys(pan);
+        driver.findElement(By.xpath("//span[.='PAN Card']/../preceding-sibling::input"))                               .sendKeys(pan);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//span[.='Experience  Certificate']/../preceding-sibling::input")).sendKeys(experience);
+        driver.findElement(By.xpath("//span[.='Experience  Certificate']/../preceding-sibling::input"))               .sendKeys(experience);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//span[.='Clinic / Hospital  Affiliation Proof']/../preceding-sibling::input")).sendKeys(affiliationProof);
+        driver.findElement(By.xpath("//span[.='Clinic / Hospital  Affiliation Proof']/../preceding-sibling::input"))   .sendKeys(affiliationProof);
         Thread.sleep(2000);
 
         DocumentsUploadAfterKycRejecting duPage = new DocumentsUploadAfterKycRejecting(driver);
-        duPage.documentsUploadingAfterKycRejecting(driver, medicalCertificate, nmcCertificate, aadhar, pan, experience, affiliationProof);
+        duPage.documentsUploadingAfterKycRejecting(driver, medicalCertificate, nmcCertificate,
+                aadhar, pan, experience, affiliationProof);
 
         ProfileUnderVerificationPage puvPage = new ProfileUnderVerificationPage(driver);
         puvPage.clickOnLogoutBtn(driver);
@@ -258,7 +279,7 @@ public class Total {
         System.out.println("Re Submission Completed");
         driver.quit();
     }
-
+    // admin approves after re-upload
     @Test(priority = 4)
     public void AdminApprovingDoctorAfterReuploadingDocs() throws Throwable {
 
@@ -285,17 +306,19 @@ public class Total {
         Thread.sleep(2000);
 
         DrKycManagementPage kycmngPage = new DrKycManagementPage(driver);
-        kycmngPage.ComparingNewlyRegisteredDoctorAndFirstDoctorInAdminPannelAndClickPreviewBtn(driver, DataStore.doctorName, doctorNumber);
+        kycmngPage.ComparingNewlyRegisteredDoctorAndFirstDoctorInAdminPannelAndClickPreviewBtn(
+                driver, DataStore.doctorName, doctorNumber);
         Thread.sleep(2000);
 
         DrIdentityProofPage dipPage = new DrIdentityProofPage(driver);
-        dipPage.editDocumentDoctorUploadedAndGivingFeeAndRating(driver, finalRating, editConsultancyFee);
+        dipPage.editDocumentDoctorUploadedAndGivingFeeAndRating(
+                driver, finalRating, editConsultancyFee);
         Thread.sleep(2000);
 
         System.out.println("Re Visited Doctors Registration and Approved by Admin");
         driver.quit();
     }
-
+    // doctor sets availability slots
     @Test(priority = 5)
     public void loginToDoctorPannelSettingDoctorAvailabilityTest() throws Throwable {
 
@@ -309,20 +332,19 @@ public class Total {
 
         LoginPage lPage = new LoginPage(driver);
         lPage.loginToDoctor(DataStore.mobileNumber);
-
         Thread.sleep(2000);
+
         VerifyCodePage vcPage = new VerifyCodePage(driver);
         vcPage.enteringOtpAndClickOnVerifyBtn();
-
         Thread.sleep(2000);
+
         WelcomePage wPage = new WelcomePage(driver);
         wPage.DoctorAddingSlot(driver);
 
         System.out.println("Doctor Availability Slot Added Successfully");
         driver.quit();
     }
-    
-    
+    // — patient registers and books appointment
     @Test(priority = 6)
     public void PatientRegisteringAndBookingSameDoctorTest() throws Exception {
 
@@ -331,14 +353,16 @@ public class Total {
         patientPhoneNo  = jUtil.getRandomMobileNum();
         patientOTP      = pUtil.readDataFromPropertyFile("potp");
         patientURL      = pUtil.readDataFromPropertyFile("patienturl");
-        
+
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get(patientURL);
 
-        // ─── Patient Registration ───────────────────────────────────────
+        System.out.println(patientPhoneNo);
+
+        // ── Patient registration ──────────────────────────────────────────
         PatientHomePage phPage = new PatientHomePage(driver);
         phPage.getLoginBtn().click();
 
@@ -354,7 +378,7 @@ public class Total {
         driver.findElement(By.className("profile-avatar")).click();
 
         WebElement nameElement = driver.findElement(
-            By.xpath("//h4[contains(text(),'" + patientFullName + "')]"));
+                By.xpath("//h4[contains(text(),'" + patientFullName + "')]"));
         wUtil.waitForElementToBeVisible(driver, nameElement);
 
         if (nameElement.isDisplayed()) {
@@ -365,49 +389,65 @@ public class Total {
                     "Name mismatch! Expected: " + patientFullName + " but got: " + visibleName);
         }
 
+        // ── Find doctor & select slot ─────────────────────────────────────
         PatientPage pPage = new PatientPage(driver);
         pPage.getPageCloseBtn().click();
-        
         Thread.sleep(2000);
-        
+
         FindDoctorsPage fdocPage = new FindDoctorsPage(driver);
-        fdocPage.BookingFrstDoctor();
-        
+        fdocPage.selectingDoctor();
         Thread.sleep(2000);
-        
-        
-//        List<WebElement> elements = driver.findElements(By.xpath("//div[@class='day-item ng-star-inserted']"));
-//        int count = elements.size();
-//        System.out.println(count);
-        
+
         FeeDetailsPage fdPage = new FeeDetailsPage(driver);
-//        fdPage.bookingSlot(driver);
-        
-        fdPage.clickOnFrstAvailableSlot();
+        fdPage.clickOnFrstAvailableSlot(driver);
         Thread.sleep(2000);
-        
         fdPage.clickOnBookNowBtn();
         Thread.sleep(1000);
-        
+
+        // ── Consultation type ─────────────────────────────────────────────
         HowDoYouWantToConsultPage hPage = new HowDoYouWantToConsultPage(driver);
         hPage.CompleteHowDoYouWantToConsultDetailsAndClickOnContinueBtn();
         Thread.sleep(2000);
-        
-        // Wanted to switch to frame.
-        
+
+        // ── Razorpay payment ──────────────────────────────────────────────
+        WebElement Frame = driver.findElement(
+                By.xpath("//iframe[@class='razorpay-checkout-frame']"));
+        wUtil.waitForElementToBeClickable(driver, Frame);
+        driver.switchTo().frame(Frame);
+
         RazorpayOPHC rPage = new RazorpayOPHC(driver);
         rPage.getNetBankingLnk().click();
         Thread.sleep(2000);
-        
+
         RazorpayNetBankingPage rnPage = new RazorpayNetBankingPage(driver);
         rnPage.bookSlotUsingSBIbank(driver);
         Thread.sleep(1000);
-        
-//      
-   }   
-    
-    
-    
-    
-    
+
+        // ── Patient details & reports ─────────────────────────────────────
+        PatientDetailsPage pdPage = new PatientDetailsPage(driver);
+        pdPage.givingPatientDetails(patientFullName);
+
+        UploadMedicalReportsAfterAppointmentConfirmPage umraaPage =
+                new UploadMedicalReportsAfterAppointmentConfirmPage(driver);
+        umraaPage.uploadingMedicalReports();
+
+        // ── Confirm booking ───────────────────────────────────────────────
+        AppointmentConfirmedPage acPage = new AppointmentConfirmedPage(driver);
+        String BookingID = acPage.getBookingId().getText();
+        System.out.println("Booking id is " + BookingID);
+
+        wUtil.scrollPageDown(1000);
+        acPage.getContinueBtn().click();
+
+        AppointmentsPage aPage = new AppointmentsPage(driver);
+        aPage.checkingAppointmentBookedOrNot(BookingID);
+        Thread.sleep(2000);
+
+        pPage.getPatientProfileIcon().click();
+        Thread.sleep(2000);
+        pPage.getLogoutLnk().click();
+
+        driver.quit();
+    }
+
 }

@@ -149,7 +149,7 @@ public class FeeDetailsPage {
 		
 		List<WebElement> allSlots = driver.findElements(By.xpath("//div[@class='day-item ng-star-inserted']"));
 
-		for (int i = 1; i <= 5; i++) {
+		for (int i = 1; i <= allSlots.size(); i++) {
 
 		    driver.findElement(
 		            By.xpath("(//div[@class='day-item ng-star-inserted'])[" + i + "]")).click();
@@ -174,10 +174,20 @@ public class FeeDetailsPage {
 		BookNowBtn.click();
 	}
 	
-	public void clickOnFrstAvailableSlot() throws Exception
+	public void clickOnFrstAvailableSlot(WebDriver driver) throws Exception
 	{
-		Thread.sleep(2000);
-		FirstAvailableSlot.click();
+		for(int i=1;i<=5;i++)
+		{
+			try {
+				Thread.sleep(2000);
+				FirstAvailableSlot.click();
+				break;
+			} catch (Exception e) {
+				driver.findElement(By.xpath("(//div[@class='day-item ng-star-inserted'])[" + i + "]")).click();
+			}
+		}
+		
+		
 	}
 	
 	

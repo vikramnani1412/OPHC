@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import genericUtilities.JavaUtility;
+
 public class PatientDetailsPage {
 
     // Finding WebElements Using @FindBy Annotations
@@ -68,5 +70,22 @@ public class PatientDetailsPage {
 		return ContinueBtn;
 	}
 
+	// Business Library
+	
+	public void givingPatientDetails(String FullName) throws Exception
+	{
+		JavaUtility jUtil = new JavaUtility();
+		String Date = jUtil.getTodaysDateIST();
+		
+		Thread.sleep(2000);
+		FullNameEdt.sendKeys(FullName);
+		Thread.sleep(2000);
+		MaleChkbox.click();
+		Thread.sleep(2000);
+		DateEdt.sendKeys(Date);
+		Thread.sleep(2000);
+		ContinueBtn.click();
+	}
+	
 	
 }

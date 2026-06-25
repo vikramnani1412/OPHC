@@ -22,11 +22,9 @@ public class FindDoctorsPage {
     
     @FindBy(xpath="(//h6[contains(.,'Dr')])[1]")private WebElement FirstDoctor;
     
-    @FindBy(xpath="//h6[.='Dr. Automation']/../../following-sibling::div//button[.='Book Now']")private WebElement DoctorBasedOnName;
+    @FindBy(xpath="//h6[contains(.,'Vicky')]/../../following-sibling::div//button[.='Book Now']")private WebElement BookNowBtnBasedOnDoctorName;
     
     @FindBy(xpath="(//h6[contains(.,'Dr')])[1]/../../following-sibling::div//button[.='Book Now']")private WebElement FirstDoctorBookNowBtn;
-    
-    @FindBy(xpath="//h6[.='Dr. ophc tester']/../../following-sibling::div//button[.='Book Now']")private WebElement BookNowBtnBasedOnDoctorName;
   
     @FindBy(xpath="(//button[.='Book Now'])[1]")private WebElement BookNowBtnBasedOnIndex;
   
@@ -80,13 +78,13 @@ public class FindDoctorsPage {
 	
 	//Business Library
 	
-	public void BookingFrstDoctor() throws Exception
+	public void selectingDoctor() throws Exception
 	{
 		Thread.sleep(2000);
-		String DoctorName = DoctorBasedOnName.getText();
+		String DoctorName = BookNowBtnBasedOnDoctorName.getText();
 		System.out.println("Patient searching for Doctor : "+DoctorName);
 		Thread.sleep(2000);
-		DoctorBasedOnName.click();
+		BookNowBtnBasedOnDoctorName.click();
 	}
 	
 }

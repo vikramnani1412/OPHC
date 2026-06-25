@@ -1,5 +1,8 @@
 package patientObjectRepository;
 
+import java.util.Set;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,17 +42,78 @@ public class RazorpayNetBankingPage {
 	
 	//Rule-3 : Provide getters to access these variables
 	
+
+	public WebElement getSBILnk() {
+		return SBILnk;
+	}
+
+
+	public WebElement getHDFCLnk() {
+		return HDFCLnk;
+	}
+
+
+	public WebElement getICICILnk() {
+		return ICICILnk;
+	}
+
+
+	public WebElement getAxisLnk() {
+		return AxisLnk;
+	}
+
+
+	public WebElement getBOBLnk() {
+		return BOBLnk;
+	}
+
+
+	public WebElement getMoreBanksLnk() {
+		return MoreBanksLnk;
+	}
+
+
+	public WebElement getContinueBtn() {
+		return ContinueBtn;
+	}
+
+
+	public WebElement getSuccessBtn() {
+		return SuccessBtn;
+	}
+
+
+	public WebElement getFailureBtn() {
+		return FailureBtn;
+	}
+
+	
+	// Business Library
+	
 	public void bookSlotUsingSBIbank(WebDriver driver) throws Exception
 	{
 		WebDriverUtility wUtil = new WebDriverUtility();
 		
 		SBILnk.click();
 		Thread.sleep(2000);
-		wUtil.waitForElementToBeClickable(driver, SuccessBtn);
-		SuccessBtn.click();
-		Thread.sleep(2000);
+        
+        String ParentWin = driver.getWindowHandle();
+		
+		Set<String> ChildWins = driver.getWindowHandles();
+		
+		for(String ChildWin : ChildWins)
+		{
+			if(!ChildWin.equals(ParentWin))
+			{
+			    driver.switchTo().window(ChildWin);
+			    driver.findElement(By.xpath("//button[.='Success']")).click();
+			}
+		}
+		
+		driver.switchTo().window(ParentWin);
+        
+		
 		
 	}
-	
-	
+
 }

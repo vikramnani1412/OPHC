@@ -47,6 +47,21 @@ public class AppointmentConfirmedPage {
 		return ContinueBtn;
 	}
 
+	// Business Library
+	
+	public void getBookingIDandClickContinue() throws Exception
+	{
+		Thread.sleep(2000);
+		String bookingId = BookingId.getText();
+		Thread.sleep(2000);
+		ContinueBtn.click();
+	}
+	
+	public void DirectlyClickOnContinueBtn() throws Exception
+	{
+		Thread.sleep(2000);
+		ContinueBtn.click();
+	}
 
 	
 }

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.YearMonth;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -307,5 +308,21 @@ public class JavaUtility {
                     .toLowerCase();
         } while (firstName.length() <= 3);
         return firstName;
+    }
+    /**
+     * This method gives todays Date in dd-MM-yyyy format
+     * @return
+     */
+    public String getTodaysDateIST() {
+        return LocalDate.now(ZoneId.of("Asia/Kolkata"))
+                .format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+    }
+    
+    /**
+     * This method gives todays Date in yyyy-MM-dd format
+     * @return
+     */
+    public String getTodaysDate() {
+        return LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 }

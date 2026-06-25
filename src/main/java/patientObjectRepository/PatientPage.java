@@ -9,8 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 public class PatientPage {
 
 	//Finding WebElements Using @FindBy Annotations
-
-    @FindBy(xpath="//button[.=' ✏️ ']")private WebElement PatientProfileEditBtn;
+    
+	@FindBy(xpath="//img[@class='profile-avatar']")private WebElement PatientProfileIcon;
+	
+    @FindBy(xpath="//button[.=' ✏️ ']")private WebElement EditPatientProfileIcon;
     
     @FindBy(xpath="//span[.='My Appointment']")private WebElement MyAppointmentLnk;
     
@@ -42,8 +44,8 @@ public class PatientPage {
 	
 	//Rule-3:Provide getters to access these variables
 	
-	public WebElement getPatientProfileEditBtn() {
-		return PatientProfileEditBtn;
+	public WebElement getPatientProfileIcon() {
+		return PatientProfileIcon;
 	}
 	
 
