@@ -360,7 +360,7 @@ public class Total {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get(patientURL);
 
-        System.out.println(patientPhoneNo);
+        System.out.println("Patient Registration Started "+patientPhoneNo);
 
         // ── Patient registration ──────────────────────────────────────────
         PatientHomePage phPage = new PatientHomePage(driver);
