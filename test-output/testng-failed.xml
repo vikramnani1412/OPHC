@@ -5,7 +5,9 @@
     <classes>
       <class name="all.Total">
         <methods>
-          <include name="PatientRegisteringAndBookingSameDoctorTest"/>
+          <include name="loginToDoctorPannelSettingDoctorAvailabilityTest"/>
+          <include name="rejectedDoctorReSubmitingDocumentsTest"/>
+          <include name="DoctorRegistrationTest"/>
         </methods>
       </class> <!-- all.Total -->
     </classes>
