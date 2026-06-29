@@ -34,4 +34,12 @@ public class LogoutPage {
 		Thread.sleep(2000);
 		LogoutBtn.click();
 	}
+	
+	public void logoutOfApplication() throws Exception
+	{
+		Thread.sleep(2000);
+		LogoutBtn.click();
+		Thread.sleep(2000);
+		clickOnYesLogoutBtn();
+	}
 }

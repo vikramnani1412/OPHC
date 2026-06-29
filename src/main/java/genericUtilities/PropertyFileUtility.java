@@ -23,7 +23,7 @@ public class PropertyFileUtility {
 
 		Properties prop = new Properties();
 
-		try (FileInputStream fis = new FileInputStream(ConstantsUtility.propertyfilepath)) {
+		try (FileInputStream fis = new FileInputStream(ConstantsUtility.PROPERTY_FILE_PATH)) {
 			prop.load(fis);
 		}
 
@@ -32,7 +32,7 @@ public class PropertyFileUtility {
 		if (value == null) {
 			throw new IllegalArgumentException(
 					"Property key '" + key + "' not found in file: "
-							+ ConstantsUtility.propertyfilepath);
+							+ ConstantsUtility.PROPERTY_FILE_PATH);
 		}
 
 		return value;

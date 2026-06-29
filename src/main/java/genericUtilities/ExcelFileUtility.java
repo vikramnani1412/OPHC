@@ -30,7 +30,7 @@ public class ExcelFileUtility {
 	public String readDataFromExcel(String sheetName, int rowNum, int cellNum)
 			throws EncryptedDocumentException, IOException {
 
-		try (FileInputStream fis = new FileInputStream(ConstantsUtility.excelfilepath);
+		try (FileInputStream fis = new FileInputStream(ConstantsUtility.EXCEL_FILE_PATH);
 				Workbook wb = WorkbookFactory.create(fis)) {
 
 			Sheet sh = wb.getSheet(sheetName);
@@ -72,7 +72,7 @@ public class ExcelFileUtility {
 		// Read the full workbook into memory first, then close the input
 		// stream before writing, since reading and writing the same file
 		// path concurrently can corrupt it or throw a file-lock error.
-		try (FileInputStream fis = new FileInputStream(ConstantsUtility.excelfilepath)) {
+		try (FileInputStream fis = new FileInputStream(ConstantsUtility.EXCEL_FILE_PATH)) {
 			wb = WorkbookFactory.create(fis);
 		}
 
@@ -95,7 +95,7 @@ public class ExcelFileUtility {
 
 		ce.setCellValue(value);
 
-		try (FileOutputStream fos = new FileOutputStream(ConstantsUtility.excelfilepath)) {
+		try (FileOutputStream fos = new FileOutputStream(ConstantsUtility.EXCEL_FILE_PATH)) {
 			wb.write(fos);
 		} finally {
 			wb.close();
@@ -112,7 +112,7 @@ public class ExcelFileUtility {
 	public Object[][] readMultipleDataFromExcel(String sheetName)
 			throws EncryptedDocumentException, IOException {
 
-		try (FileInputStream fis = new FileInputStream(ConstantsUtility.excelfilepath);
+		try (FileInputStream fis = new FileInputStream(ConstantsUtility.EXCEL_FILE_PATH);
 				Workbook wb = WorkbookFactory.create(fis)) {
 
 			Sheet sh = wb.getSheet(sheetName);
