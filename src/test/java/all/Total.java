@@ -141,17 +141,17 @@ public class Total {
         Thread.sleep(2000);
         wUtil.scrollPageUp(2);
 
-        driver.findElement(By.xpath("//span[.='Medical Degree  Certificate']/../preceding-sibling::input"))         .sendKeys(medicalCertificate);
+        driver.findElement(By.xpath("//span[.='Medical Degree  Certificate']/../preceding-sibling::input")).sendKeys(medicalCertificate);
         Thread.sleep(2000);
         driver.findElement(By.xpath("//span[.='NMC / State Medical Council Certificate']/../preceding-sibling::input")).sendKeys(nmcCertificate);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//span[.='Aadhaar Card']/../preceding-sibling::input"))                         .sendKeys(aadhar);
+        driver.findElement(By.xpath("//span[.='Aadhaar Card']/../preceding-sibling::input")).sendKeys(aadhar);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//span[.='PAN Card']/../preceding-sibling::input"))                               .sendKeys(pan);
+        driver.findElement(By.xpath("//span[.='PAN Card']/../preceding-sibling::input")).sendKeys(pan);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//span[.='Experience  Certificate']/../preceding-sibling::input"))               .sendKeys(experience);
+        driver.findElement(By.xpath("//span[.='Experience  Certificate']/../preceding-sibling::input")).sendKeys(experience);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//span[.='Clinic / Hospital  Affiliation Proof']/../preceding-sibling::input"))   .sendKeys(affiliationProof);
+        driver.findElement(By.xpath("//span[.='Clinic / Hospital  Affiliation Proof']/../preceding-sibling::input")).sendKeys(affiliationProof);
         Thread.sleep(2000);
 
         DocumentUploadPage duPage = new DocumentUploadPage(driver);
