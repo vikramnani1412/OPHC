@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="all.Total">
+      <class name="ophc.Sprint_1">
         <methods>
-          <include name="loginToDoctorPannelSettingDoctorAvailabilityTest"/>
-          <include name="rejectedDoctorReSubmitingDocumentsTest"/>
           <include name="DoctorRegistrationTest"/>
+          <include name="rejectedDoctorReSubmitingDocumentsTest"/>
+          <include name="loginToDoctorPannelTest"/>
         </methods>
-      </class> <!-- all.Total -->
+      </class> <!-- ophc.Sprint_1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
