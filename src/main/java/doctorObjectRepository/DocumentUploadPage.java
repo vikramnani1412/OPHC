@@ -183,5 +183,12 @@ public class DocumentUploadPage {
 	    
 	}
 	
+	public void scrollUp() throws Exception
+	{
+		WebDriverUtility wUtil = new WebDriverUtility();
+		Thread.sleep(2000);
+		wUtil.scrollPageUp(2);
+	}
+	
 	
 }

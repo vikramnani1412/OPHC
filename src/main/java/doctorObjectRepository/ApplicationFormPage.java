@@ -170,7 +170,7 @@ public class ApplicationFormPage {
     	Thread.sleep(2000);
     	CurrentHospitalOrClinicEdt.sendKeys("abcdef");
     	Thread.sleep(2000);
-    	
+    	    	
     	wUtil.waitForElementToBeVisible(driver, AiImage);
     	if(AiImage.isDisplayed())
     	{

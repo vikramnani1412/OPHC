@@ -1,102 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-29T17:49:43 IST" name="Default suite" finished-at="2026-06-29T17:56:14 IST" duration-ms="391260">
+  <suite started-at="2026-06-30T10:19:52 IST" name="Sprint_1" finished-at="2026-06-30T10:24:06 IST" duration-ms="253464">
     <groups>
     </groups>
-    <test started-at="2026-06-29T17:49:43 IST" name="Default test" finished-at="2026-06-29T17:56:14 IST" duration-ms="391260">
-      <class name="all.Total">
-        <test-method signature="DoctorRegistrationTest()[pri:1, instance:all.Total@2d1ef81a]" started-at="2026-06-29T17:49:43 IST" name="DoctorRegistrationTest" finished-at="2026-06-29T17:52:21 IST" duration-ms="157826" status="PASS">
+    <test started-at="2026-06-30T10:19:52 IST" name="Test" finished-at="2026-06-30T10:24:06 IST" duration-ms="253464">
+      <class name="ophc.Sprint_1">
+        <test-method signature="DoctorRegistrationTest()[pri:1, instance:ophc.Sprint_1@34e9fd99]" started-at="2026-06-30T10:19:53 IST" name="DoctorRegistrationTest" finished-at="2026-06-30T10:22:25 IST" duration-ms="152108" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DoctorRegistrationTest -->
-        <test-method signature="LoginToAdminAndApproveNewlyAddedDoctorTest()[pri:2, instance:all.Total@2d1ef81a]" started-at="2026-06-29T17:52:21 IST" name="LoginToAdminAndApproveNewlyAddedDoctorTest" finished-at="2026-06-29T17:53:09 IST" duration-ms="48050" status="PASS">
+        <test-method signature="LoginToAdminAndApproveNewlyAddedDoctorTest()[pri:2, instance:ophc.Sprint_1@34e9fd99]" started-at="2026-06-30T10:22:25 IST" name="LoginToAdminAndApproveNewlyAddedDoctorTest" finished-at="2026-06-30T10:22:56 IST" duration-ms="31170" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginToAdminAndApproveNewlyAddedDoctorTest -->
-        <test-method signature="rejectedDoctorReSubmitingDocumentsTest()[pri:3, instance:all.Total@2d1ef81a]" started-at="2026-06-29T17:53:09 IST" name="rejectedDoctorReSubmitingDocumentsTest" finished-at="2026-06-29T17:54:12 IST" duration-ms="62727" status="PASS">
+        <test-method signature="rejectedDoctorReSubmitingDocumentsTest()[pri:3, instance:ophc.Sprint_1@34e9fd99]" started-at="2026-06-30T10:22:56 IST" name="rejectedDoctorReSubmitingDocumentsTest" finished-at="2026-06-30T10:23:43 IST" duration-ms="47176" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- rejectedDoctorReSubmitingDocumentsTest -->
-        <test-method signature="AdminApprovingDoctorAfterReuploadingDocs()[pri:4, instance:all.Total@2d1ef81a]" started-at="2026-06-29T17:54:12 IST" name="AdminApprovingDoctorAfterReuploadingDocs" finished-at="2026-06-29T17:54:34 IST" duration-ms="22272" status="PASS">
+        <test-method signature="AdminApprovingDoctorAfterReuploadingDocs()[pri:4, instance:ophc.Sprint_1@34e9fd99]" started-at="2026-06-30T10:23:43 IST" name="AdminApprovingDoctorAfterReuploadingDocs" finished-at="2026-06-30T10:23:58 IST" duration-ms="14526" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AdminApprovingDoctorAfterReuploadingDocs -->
-        <test-method signature="loginToDoctorPannelSettingDoctorAvailabilityTest()[pri:5, instance:all.Total@2d1ef81a]" started-at="2026-06-29T17:54:34 IST" name="loginToDoctorPannelSettingDoctorAvailabilityTest" finished-at="2026-06-29T17:54:47 IST" duration-ms="13386" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
-            <message>
-              <![CDATA[element click intercepted: Element is not clickable at point (373, 936)
-  (Session info: chrome=148.0.7778.217)
-Build info: version: '4.34.0', revision: '707dcb4246*'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [47eea89d0cd1c5335f73eeb7a30f1adb, clickElement {id=f.FED3FFBB1043F12A97F6109E8D1C8C77.d.3CDD1F0E201831071BB26B68CF7436E2.e.95}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\INNOVA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63488}, goog:processID: 11808, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63488/devtoo..., se:cdpVersion: 148.0.7778.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (47eea89d0cd1c5335f73eeb7a30f1adb)] -> xpath: //div[.=' 29 ']]
-Session ID: 47eea89d0cd1c5335f73eeb7a30f1adb]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (373, 936)
-  (Session info: chrome=148.0.7778.217)
-Build info: version: '4.34.0', revision: '707dcb4246*'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [47eea89d0cd1c5335f73eeb7a30f1adb, clickElement {id=f.FED3FFBB1043F12A97F6109E8D1C8C77.d.3CDD1F0E201831071BB26B68CF7436E2.e.95}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\INNOVA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63488}, goog:processID: 11808, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63488/devtoo..., se:cdpVersion: 148.0.7778.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (47eea89d0cd1c5335f73eeb7a30f1adb)] -> xpath: //div[.=' 29 ']]
-Session ID: 47eea89d0cd1c5335f73eeb7a30f1adb
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at doctorObjectRepository.WelcomePage.DoctorAddingSlot(WelcomePage.java:179)
-at all.Total.loginToDoctorPannelSettingDoctorAvailabilityTest(Total.java:342)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+        <test-method signature="loginToDoctorPannelTest()[pri:5, instance:ophc.Sprint_1@34e9fd99]" started-at="2026-06-30T10:23:58 IST" name="loginToDoctorPannelTest" finished-at="2026-06-30T10:24:06 IST" duration-ms="8239" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginToDoctorPannelSettingDoctorAvailabilityTest -->
-        <test-method signature="PatientRegisteringAndBookingSameDoctorTest()[pri:6, instance:all.Total@2d1ef81a]" started-at="2026-06-29T17:54:47 IST" name="PatientRegisteringAndBookingSameDoctorTest" finished-at="2026-06-29T17:56:14 IST" duration-ms="86947" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- PatientRegisteringAndBookingSameDoctorTest -->
-      </class> <!-- all.Total -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- loginToDoctorPannelTest -->
+      </class> <!-- ophc.Sprint_1 -->
+    </test> <!-- Test -->
+  </suite> <!-- Sprint_1 -->
 </testng-results>

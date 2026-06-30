@@ -103,7 +103,8 @@ public class Sprint_1 {
         ApplicationFormPage afPage = new ApplicationFormPage(driver);
         afPage.uploadDoctorDetails(driver, imagePath);
 
-        wUtil.scrollPageUp(2);
+        DocumentUploadPage duPage = new DocumentUploadPage(driver);
+        duPage.scrollUp();
 
         driver.findElement(By.xpath("//span[text()='Medical Degree ']/../preceding-sibling::input[@type='file']")).sendKeys(medicalCertificate);
         driver.findElement(By.xpath("//span[.='NMC / State Medical Council Certificate']/../preceding-sibling::input")).sendKeys(nmcCertificate);
@@ -112,7 +113,7 @@ public class Sprint_1 {
         driver.findElement(By.xpath("//span[.='Experience  Certificate']/../preceding-sibling::input")).sendKeys(experience);
         driver.findElement(By.xpath("//span[.='Clinic / Hospital  Affiliation Proof']/../preceding-sibling::input")).sendKeys(affiliationProof);
 
-        DocumentUploadPage duPage = new DocumentUploadPage(driver);
+        
         duPage.documentsUploading(driver, medicalCertificate, nmcCertificate, aadhar, pan, experience, affiliationProof);
 
         ProfileUnderVerificationPage puvPage = new ProfileUnderVerificationPage(driver);
